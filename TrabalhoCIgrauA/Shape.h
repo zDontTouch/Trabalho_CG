@@ -22,16 +22,19 @@ public:
 	}
 
 	void translate(float direction_up, float direction_down, float direction_left, float direction_rigth) {
-		for (Vertex v: vertexes) {
-			v.pos_x += direction_rigth;
-			v.pos_x -= direction_left;
-			v.pos_y += direction_up;
-			v.pos_y -= direction_down;
+		for (int v = 0; v < vertexes.size();v++) {
+			vertexes[v].pos_x += direction_rigth;
+			vertexes[v].pos_x -= direction_left;
+			vertexes[v].pos_y += direction_up;
+			vertexes[v].pos_y -= direction_down;
 		}
 	}
 
 	void rotate(float angle) {
-		//implement rotation
+		for (int v = 0; v < vertexes.size(); v++) {
+			vertexes[v].pos_x = vertexes[v].pos_x * cos(angle) - vertexes[v].pos_y * sin(angle);
+			vertexes[v].pos_y = vertexes[v].pos_x * sin(angle) - vertexes[v].pos_y * cos(angle);
+		}
 	}
 
 	bool is_colliding_with(Shape s) {

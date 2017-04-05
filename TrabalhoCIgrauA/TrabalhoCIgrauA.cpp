@@ -15,12 +15,20 @@
 float PLAYER_MOVEMENT_TIC = 0.1;
 float ENEMY_MOVEMENT_TIC = 0.1;
 
+bool IS_RIGHT_KEY_PRESSED = false;
+bool IS_LEFT_KEY_PRESSED = false;
+bool IS_UP_KEY_PRESSED = false;
+bool IS_DOWN_KEY_PRESSED = false;
+
 Shape_factory factory;
-Shape player = factory.create_shape(Constants::PLAYER, Vertex(0.0, 0.0));;
+Shape player = factory.create_shape(Constants::PLAYER, Vertex(0.0, 0.0));
 
 void DesenhaCena(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(-10.0, 10.0, -10.0, 10.0);
 	player.draw();
 	glutSwapBuffers();
 
@@ -30,25 +38,47 @@ void DesenhaCena(void)
 // Inicializa aspectos do rendering
 void Inicio(void)
 {
-	glClearColor(50.0f, 50.0f, 50.0f, 50.0f);  // cor de fundo da janela
+	glClearColor(0.7f, 0.5f, 0.3f, 50.0f);  // cor de fundo da janela
 }
 
 //a função de tratamento de teclas sempre exige 3 inteiros como parâmetro (vai dar erro se não estiver pelo menos declarado
 void teclasEspeciais(int tecla, int x, int y) {
 
+	if (IS_RIGHT_KEY_PRESSED) {
+		if(tecla != GLUT_KEY_RIGHT)
+			player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC);
+	}
+	if (IS_LEFT_KEY_PRESSED) {
+		if (tecla != GLUT_KEY_LEFT)
+			player.translate(0, 0, PLAYER_MOVEMENT_TIC, 0);
+	}
+	if (IS_UP_KEY_PRESSED) {
+		if (tecla != GLUT_KEY_UP)
+			player.translate(PLAYER_MOVEMENT_TIC, 0, 0, 0);
+	}
+	if (IS_DOWN_KEY_PRESSED) {
+		if (tecla != GLUT_KEY_DOWN)
+			player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
+	}
+			
+
 	if (tecla == GLUT_KEY_RIGHT) {
+		IS_RIGHT_KEY_PRESSED = true;
 		player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC);
 	}
 	else {
 		if (tecla == GLUT_KEY_LEFT) {
+			IS_LEFT_KEY_PRESSED = true;
 			player.translate(0, 0, PLAYER_MOVEMENT_TIC, 0);
 		}
 		else {
 			if (tecla == GLUT_KEY_UP) {
+				IS_UP_KEY_PRESSED = true;
 				player.translate(PLAYER_MOVEMENT_TIC, 0, 0, 0);
 			}
 			else {
 				if (tecla == GLUT_KEY_DOWN) {
+					IS_DOWN_KEY_PRESSED = true;
 					player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
 				}
 			}
@@ -68,6 +98,36 @@ void teclasNormais(unsigned char tecla, int x, int y) {
 	glutPostRedisplay();
 }
 
+void mouseMotion(int x, int y) {
+	int mouse_pos_x = x - (glutGet(GLUT_WINDOW_WIDTH) / 2);
+	int mouse_pos_y = (glutGet(GLUT_WINDOW_HEIGHT) / 2) - y;
+
+
+}
+
+void teclasEspeciaisUp(int tecla, int x, int y) {
+	
+	if (tecla == GLUT_KEY_RIGHT) {
+		IS_RIGHT_KEY_PRESSED = false;
+	}
+	else {
+		if (tecla == GLUT_KEY_LEFT) {
+			IS_LEFT_KEY_PRESSED = false;
+		}
+		else {
+			if (tecla == GLUT_KEY_UP) {
+				IS_UP_KEY_PRESSED = false;
+			}
+			else {
+				if (tecla == GLUT_KEY_DOWN) {
+					IS_DOWN_KEY_PRESSED = false;
+				}
+			}
+		}
+	}
+
+}
+
 
 // Parte principal - ponto de início de execução
 // Cria janela 
@@ -76,6 +136,7 @@ void teclasNormais(unsigned char tecla, int x, int y) {
 int main(int argc, char **argv)
 {
 	glutInit(&argc, argv);
+	glutInitWindowSize(1000,1000);
 
 	// Indica que deve ser usado um unico buffer para armazenamento da imagem e representacao de cores RGB
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
@@ -85,7 +146,9 @@ int main(int argc, char **argv)
 
 	//define que vai existir um tratamento para as teclas especiais (setas, page up,etc)
 	glutSpecialFunc(teclasEspeciais);
+	glutSpecialUpFunc(teclasEspeciaisUp);
 	//glutKeyboardFunc(teclasNormais);
+	glutPassiveMotionFunc(mouseMotion);
 
 	//chama a função
 	glutDisplayFunc(DesenhaCena);
