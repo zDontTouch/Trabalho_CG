@@ -44,48 +44,21 @@ void Inicio(void)
 //a função de tratamento de teclas sempre exige 3 inteiros como parâmetro (vai dar erro se não estiver pelo menos declarado
 void teclasEspeciais(int tecla, int x, int y) {
 
-	if (IS_RIGHT_KEY_PRESSED) {
-		if(tecla != GLUT_KEY_RIGHT)
-			player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC);
-	}
-	if (IS_LEFT_KEY_PRESSED) {
-		if (tecla != GLUT_KEY_LEFT)
-			player.translate(0, 0, PLAYER_MOVEMENT_TIC, 0);
-	}
-	if (IS_UP_KEY_PRESSED) {
-		if (tecla != GLUT_KEY_UP)
-			player.translate(PLAYER_MOVEMENT_TIC, 0, 0, 0);
-	}
-	if (IS_DOWN_KEY_PRESSED) {
-		if (tecla != GLUT_KEY_DOWN)
-			player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
-	}
-			
-
-	if (tecla == GLUT_KEY_RIGHT) {
+	switch (tecla)
+	{
+	case GLUT_KEY_UP:
+		IS_UP_KEY_PRESSED = true;
+		break;
+	case GLUT_KEY_DOWN:
+		IS_DOWN_KEY_PRESSED = true;
+		break;
+	case GLUT_KEY_LEFT:
+		IS_LEFT_KEY_PRESSED = true;
+		break;
+	case GLUT_KEY_RIGHT:
 		IS_RIGHT_KEY_PRESSED = true;
-		player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC);
+		break;
 	}
-	else {
-		if (tecla == GLUT_KEY_LEFT) {
-			IS_LEFT_KEY_PRESSED = true;
-			player.translate(0, 0, PLAYER_MOVEMENT_TIC, 0);
-		}
-		else {
-			if (tecla == GLUT_KEY_UP) {
-				IS_UP_KEY_PRESSED = true;
-				player.translate(PLAYER_MOVEMENT_TIC, 0, 0, 0);
-			}
-			else {
-				if (tecla == GLUT_KEY_DOWN) {
-					IS_DOWN_KEY_PRESSED = true;
-					player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
-				}
-			}
-		}
-	}
-
-	glutPostRedisplay();
 
 }
 
@@ -128,6 +101,24 @@ void teclasEspeciaisUp(int tecla, int x, int y) {
 
 }
 
+void player_movement(int value) {
+
+	if (IS_DOWN_KEY_PRESSED)
+		player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
+
+	if (IS_UP_KEY_PRESSED)
+		player.translate(PLAYER_MOVEMENT_TIC,0, 0, 0);
+
+	if (IS_LEFT_KEY_PRESSED)
+		player.translate(0,0, PLAYER_MOVEMENT_TIC, 0);
+
+	if (IS_RIGHT_KEY_PRESSED)
+		player.translate(0,0,0, PLAYER_MOVEMENT_TIC);
+
+	glutPostRedisplay();
+	glutTimerFunc(50, player_movement, 1);
+}
+
 
 // Parte principal - ponto de início de execução
 // Cria janela 
@@ -147,6 +138,7 @@ int main(int argc, char **argv)
 	//define que vai existir um tratamento para as teclas especiais (setas, page up,etc)
 	glutSpecialFunc(teclasEspeciais);
 	glutSpecialUpFunc(teclasEspeciaisUp);
+	glutTimerFunc(50,player_movement,1);
 	//glutKeyboardFunc(teclasNormais);
 	glutPassiveMotionFunc(mouseMotion);
 
