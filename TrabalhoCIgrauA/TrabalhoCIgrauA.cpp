@@ -11,6 +11,18 @@
 #include "Vertex.h"
 #include "Constants.h"
 
+double previous_mouse_x_position = -500;
+double previous_mouse_y_position = 500;
+
+double get_mouse_angle(int posX, int posY) {
+
+	float deltaY = posY - previous_mouse_y_position; //hardcoded y coordinate of the tip of the spaceship
+	float deltaX = posX - previous_mouse_x_position; //hardcoded x coordinate of the tip of the spaceship
+
+	//calculate how much the delta affects as rotation angle
+	return 0;
+}
+
 //setting some game constants
 float PLAYER_MOVEMENT_TIC = 0.1;
 float ENEMY_MOVEMENT_TIC = 0.1;
@@ -41,58 +53,53 @@ void Inicio(void)
 	glClearColor(0.7f, 0.5f, 0.3f, 50.0f);  // cor de fundo da janela
 }
 
-//a função de tratamento de teclas sempre exige 3 inteiros como parâmetro (vai dar erro se não estiver pelo menos declarado
-void teclasEspeciais(int tecla, int x, int y) {
-
-	switch (tecla)
+//ja a função de tratamento de teclas normais exige um unsigned char e dois ints
+void teclasNormais(unsigned char tecla, int x, int y) {
+	
+	switch (toupper(tecla))
 	{
-	case GLUT_KEY_UP:
+	case 'W':
 		IS_UP_KEY_PRESSED = true;
 		break;
-	case GLUT_KEY_DOWN:
+	case 'S':
 		IS_DOWN_KEY_PRESSED = true;
 		break;
-	case GLUT_KEY_LEFT:
+	case 'A':
 		IS_LEFT_KEY_PRESSED = true;
 		break;
-	case GLUT_KEY_RIGHT:
+	case 'D':
 		IS_RIGHT_KEY_PRESSED = true;
 		break;
 	}
 
 }
 
-//ja a função de tratamento de teclas normais exige um unsigned char e dois ints
-void teclasNormais(unsigned char tecla, int x, int y) {
-	if (tecla == 'r' || tecla == 'R') {
-		//transX_square = 0;
-		//transY_square = 0;
-	}
-	glutPostRedisplay();
-}
-
 void mouseMotion(int x, int y) {
 	int mouse_pos_x = x - (glutGet(GLUT_WINDOW_WIDTH) / 2);
 	int mouse_pos_y = (glutGet(GLUT_WINDOW_HEIGHT) / 2) - y;
+	double angle = get_mouse_angle(mouse_pos_x, mouse_pos_y);
 
+	previous_mouse_x_position = mouse_pos_x;
+	previous_mouse_y_position = mouse_pos_y;
 
+	//player.rotate(angle);
 }
 
-void teclasEspeciaisUp(int tecla, int x, int y) {
-	
-	if (tecla == GLUT_KEY_RIGHT) {
+void teclasNormaisUp(unsigned char tecla, int x, int y) {
+
+	if (toupper(tecla) == 'D') {
 		IS_RIGHT_KEY_PRESSED = false;
 	}
 	else {
-		if (tecla == GLUT_KEY_LEFT) {
+		if (toupper(tecla) == 'A') {
 			IS_LEFT_KEY_PRESSED = false;
 		}
 		else {
-			if (tecla == GLUT_KEY_UP) {
+			if (toupper(tecla) == 'W') {
 				IS_UP_KEY_PRESSED = false;
 			}
 			else {
-				if (tecla == GLUT_KEY_DOWN) {
+				if (toupper(tecla) == 'S') {
 					IS_DOWN_KEY_PRESSED = false;
 				}
 			}
@@ -119,7 +126,6 @@ void player_movement(int value) {
 	glutTimerFunc(50, player_movement, 1);
 }
 
-
 // Parte principal - ponto de início de execução
 // Cria janela 
 // Inicializa aspectos relacionados a janela e a geracao da imagem
@@ -134,12 +140,12 @@ int main(int argc, char **argv)
 
 	// Cria uma janela com o titulo especificado
 	glutCreateWindow("Exemplo Basico");
+	SetCursorPos(0, 0); //0,0 is equal to relative -500,500 which is set as the initial values of x and y previous cursor position
 
 	//define que vai existir um tratamento para as teclas especiais (setas, page up,etc)
-	glutSpecialFunc(teclasEspeciais);
-	glutSpecialUpFunc(teclasEspeciaisUp);
 	glutTimerFunc(50,player_movement,1);
-	//glutKeyboardFunc(teclasNormais);
+	glutKeyboardFunc(teclasNormais);
+	glutKeyboardUpFunc(teclasNormaisUp);
 	glutPassiveMotionFunc(mouseMotion);
 
 	//chama a função
