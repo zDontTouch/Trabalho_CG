@@ -19,7 +19,10 @@ double get_mouse_angle(int posX, int posY) {
 	float deltaY = posY - previous_mouse_y_position; //hardcoded y coordinate of the tip of the spaceship
 	float deltaX = posX - previous_mouse_x_position; //hardcoded x coordinate of the tip of the spaceship
 
-	//calculate how much the delta affects as rotation angle
+	/*
+		cos 0 = <u,v>
+			   |u|.|v|
+	*/
 	return 0;
 }
 
@@ -34,6 +37,7 @@ bool IS_DOWN_KEY_PRESSED = false;
 
 Shape_factory factory;
 Shape player = factory.create_shape(Constants::PLAYER, Vertex(0.0, 0.0));
+Shape wall = factory.create_shape(Constants::ENEMY, Vertex(3.0, 4.0));
 
 void DesenhaCena(void)
 {
@@ -42,6 +46,7 @@ void DesenhaCena(void)
 	glLoadIdentity();
 	gluOrtho2D(-10.0, 10.0, -10.0, 10.0);
 	player.draw();
+	wall.draw();
 	glutSwapBuffers();
 
 }
@@ -121,6 +126,12 @@ void player_movement(int value) {
 
 	if (IS_RIGHT_KEY_PRESSED)
 		player.translate(0,0,0, PLAYER_MOVEMENT_TIC);
+
+	bool colidindo = player.is_colliding_with(wall);
+	if (colidindo)
+		cout << "esta colidindo" << endl;
+	else
+		cout << "não esta colidindo" << endl;
 
 	glutPostRedisplay();
 	glutTimerFunc(50, player_movement, 1);

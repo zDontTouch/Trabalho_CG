@@ -9,9 +9,64 @@
 #include <iostream>
 #include "Constants.h"
 using namespace std;
+using namespace Constants;
 
 class Shape
 {
+
+private:
+	bool is_vertex_inside(Shape s, Vertex v) {
+		if (s.vertexes.size() == 3) {
+			//special triangle hitbox
+			switch (s.type)
+			{
+			case PLAYER:
+				if (v.pos_y >= s.vertexes[1].pos_y + (PLAYER_HEIGHT / 2)) {  //vertex is above triangle vertical middle
+					//          vertex Y is above triangle middle                 vertex Y is below triangle top  vertex X is on the right of player width/4 (aproximated)      vertex X is left of player width/4
+					return v.pos_y >= s.vertexes[1].pos_y + (PLAYER_HEIGHT / 2) && v.pos_y <= s.vertexes[0].pos_y && v.pos_x >= s.vertexes[0].pos_x - (PLAYER_WIDTH / 4)   && v.pos_x <= s.vertexes[0].pos_x + (PLAYER_WIDTH / 4);
+				}
+				else { //vertex is below triangle vertical middle
+					//   vertex Y is above triangle bottom        vertex Y is below triangle vertical middle         vertex X is on right of triangle left and left of triangle right
+					return v.pos_y >= s.vertexes[1].pos_y && v.pos_y <= s.vertexes[1].pos_y + (PLAYER_HEIGHT / 2) && v.pos_x >= s.vertexes[2].pos_x && v.pos_x <= s.vertexes[1].pos_x;
+				}
+				break;
+			case ENEMY:
+				if (v.pos_y >= s.vertexes[1].pos_y + (ENEMY_HEIGHT / 2)) {  //vertex is above triangle vertical middle
+																			 //          vertex Y is above triangle middle                 vertex Y is below triangle top  vertex X is on the right of player width/4 (aproximated)      vertex X is left of player width/4
+					return v.pos_y >= s.vertexes[1].pos_y + (ENEMY_HEIGHT / 2) && v.pos_y <= s.vertexes[0].pos_y && v.pos_x >= s.vertexes[0].pos_x - (ENEMY_WIDTH / 4) && v.pos_x <= s.vertexes[0].pos_x + (ENEMY_WIDTH / 4);
+				}
+				else { //vertex is below triangle vertical middle
+					   //   vertex Y is above triangle bottom        vertex Y is below triangle vertical middle         vertex X is on right of triangle left and left of triangle right
+					return v.pos_y >= s.vertexes[1].pos_y && v.pos_y <= s.vertexes[1].pos_y + (ENEMY_HEIGHT / 2) && v.pos_x >= s.vertexes[2].pos_x && v.pos_x <= s.vertexes[1].pos_x;
+				}
+				break;
+			case ENEMY_FOV:
+				if (v.pos_y >= s.vertexes[1].pos_y + (ENEMY_FOV_HEIGHT / 2)) {  //vertex is above triangle vertical middle
+																			 //          vertex Y is above triangle middle                 vertex Y is below triangle top  vertex X is on the right of player width/4 (aproximated)      vertex X is left of player width/4
+					return v.pos_y >= s.vertexes[1].pos_y + (ENEMY_FOV_HEIGHT / 2) && v.pos_y <= s.vertexes[0].pos_y && v.pos_x >= s.vertexes[0].pos_x - (ENEMY_FOV_WIDTH / 4) && v.pos_x <= s.vertexes[0].pos_x + (ENEMY_FOV_WIDTH / 4);
+				}
+				else { //vertex is below triangle vertical middle
+					   //   vertex Y is above triangle bottom        vertex Y is below triangle vertical middle         vertex X is on right of triangle left and left of triangle right
+					return v.pos_y >= s.vertexes[1].pos_y && v.pos_y <= s.vertexes[1].pos_y + (ENEMY_FOV_HEIGHT / 2) && v.pos_x >= s.vertexes[2].pos_x && v.pos_x <= s.vertexes[1].pos_x;
+				}
+				break;
+			case HOSTAGE:
+				if (v.pos_y >= s.vertexes[1].pos_y + (HOSTAGE_HEIGHT / 2)) {  //vertex is above triangle vertical middle
+																				//          vertex Y is above triangle middle                 vertex Y is below triangle top  vertex X is on the right of player width/4 (aproximated)      vertex X is left of player width/4
+					return v.pos_y >= s.vertexes[1].pos_y + (HOSTAGE_HEIGHT / 2) && v.pos_y <= s.vertexes[0].pos_y && v.pos_x >= s.vertexes[0].pos_x - (HOSTAGE_WIDTH / 4) && v.pos_x <= s.vertexes[0].pos_x + (HOSTAGE_WIDTH / 4);
+				}
+				else { //vertex is below triangle vertical middle
+					   //   vertex Y is above triangle bottom        vertex Y is below triangle vertical middle         vertex X is on right of triangle left and left of triangle right
+					return v.pos_y >= s.vertexes[1].pos_y && v.pos_y <= s.vertexes[1].pos_y + (HOSTAGE_HEIGHT / 2) && v.pos_x >= s.vertexes[2].pos_x && v.pos_x <= s.vertexes[1].pos_x;
+				}
+				break;
+			}
+		}
+		else {
+			return v.pos_x >= s.vertexes[0].pos_x && v.pos_x <= s.vertexes[1].pos_x && v.pos_y <= s.vertexes[0].pos_y && v.pos_y >= s.vertexes[3].pos_y;
+		}
+	}
+
 public:
 	int type;
 	std::vector<Vertex> vertexes;
@@ -38,37 +93,47 @@ public:
 	}
 
 	bool is_colliding_with(Shape s) {
-		//implement collision
+
+		for (int i = 0; i < this->vertexes.size(); i++) {
+			if (is_vertex_inside(s, this->vertexes[i]))
+				return true;
+		}
+
+		for (int i = 0; i < s.vertexes.size(); i++) {
+			if (is_vertex_inside(*this, s.vertexes[i]))
+				return true;
+		}
+
+		return false;
+
 	}
 
 	vector<float> check_color() {
 		vector<float> ret;
 		switch (type)
 		{
-		case Constants::WALL:
-			ret = { 0.0f , 0.3f , 0.0f };
+		case WALL:
+			return WALL_COLOR;
 			break;
-		case Constants::PLAYER:
-			ret = { 0.1f , 7.0f , 7.0f };
+		case PLAYER:
+			return PLAYER_COLOR;
 			break;
-		case Constants::ENEMY:
-			ret = { 0.8f , 0.0f , 0.0f };
+		case ENEMY:
+			return ENEMY_COLOR;
 			break;
-		case Constants::ENEMY_FOV:
-			ret = { 1.0f , 0.5f , 0.5f };
+		case ENEMY_FOV:
+			return ENEMY_FOV_COLOR;
 			break;
-		case Constants::HOSTAGE:
-			ret = { 1.0f , 0.0f , 1.0f };
+		case HOSTAGE:
+			return HOSTAGE_COLOR;
 			break;
-		case Constants::BULLET:
-			ret = { 0.0f , 0.0f , 0.0f };
+		case BULLET:
+			return BULLET_COLOR;
 			break;
-		case Constants::POWERUP:
-			ret = { 0.0f , 0.0f , 0.0f };
+		case POWERUP:
+			return POWERUP_COLOR;
 			break;
 		}
-
-		return ret;
 	}
 
 	void draw() {

@@ -1,20 +1,24 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (TrabalhoCIgrauA.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   TrabalhoCIgrauA.cpp
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(25): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(34): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(9): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(10): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(12): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(13): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(18): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(21): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(22): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(24): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(6): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(7): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(9): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(10): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(12): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(18): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(19): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(21): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(80): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(89): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(97): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(102): warning C4018: '<': signed/unsigned mismatch
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(27): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(28): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(81): warning C4715: 'Shape_factory::create_shape': not all control paths return a value
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(30): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(31): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(137): warning C4715: 'Shape::check_color': not all control paths return a value
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(65): warning C4715: 'Shape_factory::create_shape': not all control paths return a value
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(68): warning C4715: 'Shape::is_vertex_inside': not all control paths return a value
   TrabalhoCIgrauA.vcxproj -> C:\Users\Leo\Documents\Visual Studio 2015\Projects\TrabalhoCIgrauA\Debug\TrabalhoCGgrauA.exe
   TrabalhoCIgrauA.vcxproj -> C:\Users\Leo\Documents\Visual Studio 2015\Projects\TrabalhoCIgrauA\Debug\TrabalhoCGgrauA.pdb (Full PDB)
