@@ -10,9 +10,11 @@
 #include "Shape_factory.h"
 #include "Vertex.h"
 #include "Constants.h"
+using namespace Constants;
 
-double previous_mouse_x_position = -500;
-double previous_mouse_y_position = 500;
+double previous_mouse_x_position;
+double previous_mouse_y_position;
+float current_player_health = PLAYER_HEALTH;
 
 double get_mouse_angle(int posX, int posY) {
 
@@ -36,8 +38,83 @@ bool IS_UP_KEY_PRESSED = false;
 bool IS_DOWN_KEY_PRESSED = false;
 
 Shape_factory factory;
+//////////////////////////////////////////
+//           creating map walls         //
+//////////////////////////////////////////
+Shape wall1 = factory.create_shape(Constants::WALL, Vertex(-5.0, 4.0), 2.0, 3.0);
+
+vector<Shape> map{
+	wall1
+};
+
+//////////////////////////////////////////
+//           creating enemies           //
+//////////////////////////////////////////
+Shape enemy_1 = factory.create_shape(Constants::ENEMY, Vertex(3.0, 4.0));
+
+vector<Shape> enemies{
+	enemy_1
+};
+
+//////////////////////////////////////////
+//           creating hostages          //
+//////////////////////////////////////////
+Shape hostage_1 = factory.create_shape(Constants::HOSTAGE, Vertex(-3.0, -4.0));
+
+vector<Shape> hostages{
+	hostage_1
+};
+
+//////////////////////////////////////////
+//         creating enemy's FoV         //
+// ps: the enemy FoVs must be created   //
+//   in the same sequence as enemies    //
+//////////////////////////////////////////
+Shape enemy_fov_1 = factory.create_shape(Constants::ENEMY_FOV, enemy_1.vertexes[0]);
+
+vector<Shape> enemy_fov{
+	enemy_fov_1
+};
+
+//////////////////////////////////////////
+//           creating powerups          //
+//////////////////////////////////////////
+Shape powerup_1 = factory.create_shape(Constants::POWERUP, Vertex(-3.0, -6.0));
+
+vector<Shape> power_ups{
+	powerup_1
+};
+
+//creating player
 Shape player = factory.create_shape(Constants::PLAYER, Vertex(0.0, 0.0));
-Shape wall = factory.create_shape(Constants::ENEMY, Vertex(3.0, 4.0));
+
+void draw_elements() {
+	//drawing player
+	player.draw();
+
+	//drawing walls
+	for (int i = 0;i < map.size();i++) {
+		map[i].draw();
+	}
+
+	//drawing enemies and their FoVs
+	for (int i = 0;i < enemies.size();i++) {
+		if (enemies[i].health != 0) {
+			enemies[i].draw();
+			enemy_fov[i].draw();
+		}
+	}
+
+	//drawing hostages
+	for (int i = 0;i < hostages.size();i++) {
+		hostages[i].draw();
+	}
+
+	//drawing power_ups
+	for (int i = 0;i < power_ups.size();i++) {
+		hostages[i].draw();
+	}
+}
 
 void DesenhaCena(void)
 {
@@ -45,10 +122,13 @@ void DesenhaCena(void)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(-10.0, 10.0, -10.0, 10.0);
-	player.draw();
-	wall.draw();
+	draw_elements();
 	glutSwapBuffers();
 
+	if (current_player_health <= 0) {
+		cout << "GAME OVER" << endl << endl;
+		system("pause");
+	}
 }
 
 
@@ -84,6 +164,7 @@ void mouseMotion(int x, int y) {
 	int mouse_pos_y = (glutGet(GLUT_WINDOW_HEIGHT) / 2) - y;
 	double angle = get_mouse_angle(mouse_pos_x, mouse_pos_y);
 
+
 	previous_mouse_x_position = mouse_pos_x;
 	previous_mouse_y_position = mouse_pos_y;
 
@@ -115,26 +196,114 @@ void teclasNormaisUp(unsigned char tecla, int x, int y) {
 
 void player_movement(int value) {
 
-	if (IS_DOWN_KEY_PRESSED)
-		player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
+	
 
-	if (IS_UP_KEY_PRESSED)
-		player.translate(PLAYER_MOVEMENT_TIC,0, 0, 0);
+	if (IS_DOWN_KEY_PRESSED) {
+		Shape teste = player.simulate_translation(0, PLAYER_MOVEMENT_TIC, 0, 0);
+		//testing wall collision
+		for (int i = 0;i < map.size();i++) {
+			if (!teste.is_colliding_with(map[i])) {
+				player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
+			}
+		}
 
-	if (IS_LEFT_KEY_PRESSED)
-		player.translate(0,0, PLAYER_MOVEMENT_TIC, 0);
+		//testing enemy and FoV collision
+		for (int i = 0;i < enemies.size();i++) {
+			if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
+				player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
+				Sleep(50);
+				current_player_health--;
+				player.translate(PLAYER_MOVEMENT_TIC*3, 0, 0, 0);
+				IS_UP_KEY_PRESSED = false;
+				IS_DOWN_KEY_PRESSED = false;
+				IS_LEFT_KEY_PRESSED = false;
+				IS_RIGHT_KEY_PRESSED = false;
+			}
+		}
+	}
 
-	if (IS_RIGHT_KEY_PRESSED)
-		player.translate(0,0,0, PLAYER_MOVEMENT_TIC);
+	if (IS_UP_KEY_PRESSED) {
+		Shape teste = player.simulate_translation(PLAYER_MOVEMENT_TIC, 0, 0, 0);
+		//testing wall collision
+		for (int i = 0;i < map.size();i++) {
+			if (!teste.is_colliding_with(map[i])) {
+				player.translate(PLAYER_MOVEMENT_TIC, 0, 0, 0);
+			}
+		}
 
-	bool colidindo = player.is_colliding_with(wall);
-	if (colidindo)
-		cout << "esta colidindo" << endl;
-	else
-		cout << "não esta colidindo" << endl;
+		//testing enemy and FoV collision
+		for (int i = 0;i < enemies.size();i++) {
+			if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
+				player.translate(PLAYER_MOVEMENT_TIC, 0, 0, 0);
+				Sleep(50);
+				current_player_health--;
+				player.translate(0, PLAYER_MOVEMENT_TIC*3, 0, 0);
+				IS_UP_KEY_PRESSED = false;
+				IS_DOWN_KEY_PRESSED = false;
+				IS_LEFT_KEY_PRESSED = false;
+				IS_RIGHT_KEY_PRESSED = false;
+			}
+		}
+	}
+
+	if (IS_LEFT_KEY_PRESSED) {
+		Shape teste = player.simulate_translation(0, 0, PLAYER_MOVEMENT_TIC, 0);
+		//testing wall collision
+		for (int i = 0;i < map.size();i++) {
+			if (!teste.is_colliding_with(map[i])) {
+				player.translate(0, 0, PLAYER_MOVEMENT_TIC, 0);
+			}
+		}
+
+		//testing enemy and FoV collision
+		for (int i = 0;i < enemies.size();i++) {
+			if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
+				player.translate(0, 0, PLAYER_MOVEMENT_TIC, 0);
+				Sleep(50);
+				current_player_health--;
+				player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC*3);
+				IS_UP_KEY_PRESSED = false;
+				IS_DOWN_KEY_PRESSED = false;
+				IS_LEFT_KEY_PRESSED = false;
+				IS_RIGHT_KEY_PRESSED = false;
+			}
+		}
+	}
+
+	if (IS_RIGHT_KEY_PRESSED) {
+		Shape teste = player.simulate_translation(0, 0, 0, PLAYER_MOVEMENT_TIC);
+		//testing wall collision
+		for (int i = 0;i < map.size();i++) {
+			if (!teste.is_colliding_with(map[i])) {
+				player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC);
+			}
+		}
+
+		//testing enemy and FoV collision
+		for (int i = 0;i < enemies.size();i++) {
+			if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
+				player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC);
+				Sleep(50);
+				current_player_health--;
+				player.translate(0, 0, PLAYER_MOVEMENT_TIC*3, 0);
+				IS_UP_KEY_PRESSED = false;
+				IS_DOWN_KEY_PRESSED = false;
+				IS_LEFT_KEY_PRESSED = false;
+				IS_RIGHT_KEY_PRESSED = false;
+			}
+		}
+	}
+
+	for (int i = 0;i < hostages.size();i++) {
+		if (player.is_colliding_with(hostages[i])) {
+			cout << "VOCÊ VENCEU!" << endl << endl;
+			system("pause");
+		}
+	}
 
 	glutPostRedisplay();
 	glutTimerFunc(50, player_movement, 1);
+
 }
 
 // Parte principal - ponto de início de execução

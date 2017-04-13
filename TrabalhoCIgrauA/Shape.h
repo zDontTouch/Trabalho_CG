@@ -70,10 +70,24 @@ private:
 public:
 	int type;
 	std::vector<Vertex> vertexes;
+	float health; //if the shape is aplayer, enemy or hostage, it has a health value
 
 	Shape(int type, std::vector<Vertex> vertexes) {
 		this->type = type;
 		this->vertexes = vertexes;
+		switch (type)
+		{
+		case PLAYER:
+			health = PLAYER_HEALTH;
+			break;
+		case ENEMY:
+			health = ENEMY_HEALTH;
+			break;
+		case HOSTAGE:
+			health = HOSTAGE_HEALTH;
+		default:
+			break;
+		}
 	}
 
 	void translate(float direction_up, float direction_down, float direction_left, float direction_rigth) {
@@ -144,6 +158,12 @@ public:
 			glVertex2f(v.pos_x, v.pos_y);
 		}
 		glEnd();
+	}
+
+	Shape simulate_translation(float direction_up, float direction_down, float direction_left, float direction_rigth) {
+		Shape ret(PLAYER, { this->vertexes[0], this->vertexes[1], this->vertexes[2] });
+		ret.translate(direction_up, direction_down, direction_left, direction_rigth);
+		return ret;
 	}
 };
 
