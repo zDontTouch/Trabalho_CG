@@ -22,47 +22,62 @@ private:
 			{
 			case PLAYER:
 				if (v.pos_y >= s.vertexes[1].pos_y + (PLAYER_HEIGHT / 2)) {  //vertex is above triangle vertical middle
-					//          vertex Y is above triangle middle                 vertex Y is below triangle top  vertex X is on the right of player width/4 (aproximated)      vertex X is left of player width/4
-					return v.pos_y >= s.vertexes[1].pos_y + (PLAYER_HEIGHT / 2) && v.pos_y <= s.vertexes[0].pos_y && v.pos_x >= s.vertexes[0].pos_x - (PLAYER_WIDTH / 4)   && v.pos_x <= s.vertexes[0].pos_x + (PLAYER_WIDTH / 4);
+					return v.pos_y >= s.vertexes[1].pos_y + (PLAYER_HEIGHT / 2) &&  //vertex Y is above triangle middle
+					v.pos_y <= s.vertexes[0].pos_y && //vertex Y is below triangle top
+					v.pos_x >= s.vertexes[0].pos_x - (PLAYER_WIDTH / 4)   && //vertex X is on the right of player width/4 (aproximated)
+					v.pos_x <= s.vertexes[0].pos_x + (PLAYER_WIDTH / 4);   //vertex X is left of player width/4
 				}
 				else { //vertex is below triangle vertical middle
-					//   vertex Y is above triangle bottom        vertex Y is below triangle vertical middle         vertex X is on right of triangle left and left of triangle right
-					return v.pos_y >= s.vertexes[1].pos_y && v.pos_y <= s.vertexes[1].pos_y + (PLAYER_HEIGHT / 2) && v.pos_x >= s.vertexes[2].pos_x && v.pos_x <= s.vertexes[1].pos_x;
+					return v.pos_y >= s.vertexes[1].pos_y &&  //   vertex Y is above triangle bottom
+					v.pos_y <= s.vertexes[1].pos_y + (PLAYER_HEIGHT / 2) &&  //vertex Y is below triangle vertical middle         
+					v.pos_x >= s.vertexes[2].pos_x && v.pos_x <= s.vertexes[1].pos_x;  //vertex X is on right of triangle left and left of triangle right
 				}
 				break;
 			case ENEMY:
 				if (v.pos_y >= s.vertexes[1].pos_y + (ENEMY_HEIGHT / 2)) {  //vertex is above triangle vertical middle
-																			 //          vertex Y is above triangle middle                 vertex Y is below triangle top  vertex X is on the right of player width/4 (aproximated)      vertex X is left of player width/4
-					return v.pos_y >= s.vertexes[1].pos_y + (ENEMY_HEIGHT / 2) && v.pos_y <= s.vertexes[0].pos_y && v.pos_x >= s.vertexes[0].pos_x - (ENEMY_WIDTH / 4) && v.pos_x <= s.vertexes[0].pos_x + (ENEMY_WIDTH / 4);
+					return v.pos_y >= s.vertexes[1].pos_y + (ENEMY_HEIGHT / 2) &&  //vertex Y is above triangle middle                 
+					v.pos_y <= s.vertexes[0].pos_y && //vertex Y is below triangle top
+					v.pos_x >= s.vertexes[0].pos_x - (ENEMY_WIDTH / 4) &&  //vertex X is on the right of player width/4 (aproximated)
+					v.pos_x <= s.vertexes[0].pos_x + (ENEMY_WIDTH / 4);  //vertex X is left of player width/4
 				}
 				else { //vertex is below triangle vertical middle
-					   //   vertex Y is above triangle bottom        vertex Y is below triangle vertical middle         vertex X is on right of triangle left and left of triangle right
-					return v.pos_y >= s.vertexes[1].pos_y && v.pos_y <= s.vertexes[1].pos_y + (ENEMY_HEIGHT / 2) && v.pos_x >= s.vertexes[2].pos_x && v.pos_x <= s.vertexes[1].pos_x;
+					return v.pos_y >= s.vertexes[1].pos_y && //   vertex Y is above triangle bottom
+					v.pos_y <= s.vertexes[1].pos_y + (ENEMY_HEIGHT / 2) &&  //vertex Y is below triangle vertical middle         
+					v.pos_x >= s.vertexes[2].pos_x && //vertex X is on right of triangle left
+					v.pos_x <= s.vertexes[1].pos_x;   //and left of triangle right
 				}
 				break;
 			case ENEMY_FOV:
-				if (v.pos_y >= s.vertexes[1].pos_y + (ENEMY_FOV_HEIGHT / 2)) {  //vertex is above triangle vertical middle
-																			 //          vertex Y is above triangle middle                 vertex Y is below triangle top  vertex X is on the right of player width/4 (aproximated)      vertex X is left of player width/4
-					return v.pos_y >= s.vertexes[1].pos_y + (ENEMY_FOV_HEIGHT / 2) && v.pos_y <= s.vertexes[0].pos_y && v.pos_x >= s.vertexes[0].pos_x - (ENEMY_FOV_WIDTH / 4) && v.pos_x <= s.vertexes[0].pos_x + (ENEMY_FOV_WIDTH / 4);
+				//in the case of enemy FoV, the triangle hitbox logic must be inversed (since the FoV is an upside-down triangle
+				if (v.pos_y >= s.vertexes[2].pos_y + (ENEMY_FOV_HEIGHT / 2)) {  //vertex is above triangle vertical middle
+					return  v.pos_y <= s.vertexes[0].pos_y && //vertex is y-inside the triangle
+					v.pos_x >= s.vertexes[0].pos_x && // vertex is right of the left vertex
+					v.pos_x <= s.vertexes[1].pos_x; //vertex is left of right vertex (is x-inside the triangle
 				}
 				else { //vertex is below triangle vertical middle
-					   //   vertex Y is above triangle bottom        vertex Y is below triangle vertical middle         vertex X is on right of triangle left and left of triangle right
-					return v.pos_y >= s.vertexes[1].pos_y && v.pos_y <= s.vertexes[1].pos_y + (ENEMY_FOV_HEIGHT / 2) && v.pos_x >= s.vertexes[2].pos_x && v.pos_x <= s.vertexes[1].pos_x;
+					return v.pos_y >= s.vertexes[2].pos_y && //vertex is y-inside triangle
+					v.pos_x >= s.vertexes[2].pos_x - (ENEMY_FOV_WIDTH / 4) && //vertex is right of FoV width/4 (aproximated)
+					v.pos_x <= s.vertexes[2].pos_x + (ENEMY_FOV_WIDTH / 4); //vertex is left of FoV width/4 (aproximated)
 				}
 				break;
 			case HOSTAGE:
 				if (v.pos_y >= s.vertexes[1].pos_y + (HOSTAGE_HEIGHT / 2)) {  //vertex is above triangle vertical middle
-																				//          vertex Y is above triangle middle                 vertex Y is below triangle top  vertex X is on the right of player width/4 (aproximated)      vertex X is left of player width/4
-					return v.pos_y >= s.vertexes[1].pos_y + (HOSTAGE_HEIGHT / 2) && v.pos_y <= s.vertexes[0].pos_y && v.pos_x >= s.vertexes[0].pos_x - (HOSTAGE_WIDTH / 4) && v.pos_x <= s.vertexes[0].pos_x + (HOSTAGE_WIDTH / 4);
+					return v.pos_y >= s.vertexes[1].pos_y + (HOSTAGE_HEIGHT / 2) &&  //vertex Y is above triangle middle
+					v.pos_y <= s.vertexes[0].pos_y && //vertex Y is below triangle top
+					v.pos_x >= s.vertexes[0].pos_x - (HOSTAGE_WIDTH / 4) && //vertex X is on the right of player width/4 (aproximated)
+					v.pos_x <= s.vertexes[0].pos_x + (HOSTAGE_WIDTH / 4);  //vertex X is left of player width/4
 				}
 				else { //vertex is below triangle vertical middle
-					   //   vertex Y is above triangle bottom        vertex Y is below triangle vertical middle         vertex X is on right of triangle left and left of triangle right
-					return v.pos_y >= s.vertexes[1].pos_y && v.pos_y <= s.vertexes[1].pos_y + (HOSTAGE_HEIGHT / 2) && v.pos_x >= s.vertexes[2].pos_x && v.pos_x <= s.vertexes[1].pos_x;
+					return v.pos_y >= s.vertexes[1].pos_y &&  //vertex Y is above triangle bottom 
+					v.pos_y <= s.vertexes[1].pos_y + (HOSTAGE_HEIGHT / 2) &&  //vertex Y is below triangle vertical middle         
+					v.pos_x >= s.vertexes[2].pos_x && //vertex X is on right of triangle left
+					v.pos_x <= s.vertexes[1].pos_x;   //and left of triangle right
 				}
 				break;
 			}
 		}
 		else {
+			//normal square hitbox
 			return v.pos_x >= s.vertexes[0].pos_x && v.pos_x <= s.vertexes[1].pos_x && v.pos_y <= s.vertexes[0].pos_y && v.pos_y >= s.vertexes[3].pos_y;
 		}
 	}
@@ -130,7 +145,19 @@ public:
 			return WALL_COLOR;
 			break;
 		case PLAYER:
-			return PLAYER_COLOR;
+			if (this->health == 3) {
+				return PLAYER_COLOR_FULL;
+			}
+			else if (this->health == 2) {
+				return PLAYER_COLOR_MEDIUM;
+			}
+			else if(this->health == 1){
+				return PLAYER_COLOR_LOW;
+			}
+			else {
+				return PLAYER_COLOR_DEAD;
+			}
+			
 			break;
 		case ENEMY:
 			return ENEMY_COLOR;

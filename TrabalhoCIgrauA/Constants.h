@@ -28,7 +28,10 @@ namespace Constants {
 
 	//setting game element colors contants
 	std::vector<float> WALL_COLOR = { 0.0f , 0.3f , 0.0f };
-	std::vector<float> PLAYER_COLOR = { 0.1f , 7.0f , 7.0f };
+	std::vector<float> PLAYER_COLOR_FULL = { 0.1f , 1.0f , 1.0f };
+	std::vector<float> PLAYER_COLOR_MEDIUM = { 0.1f, 0.7f, 0.7f };
+	std::vector<float> PLAYER_COLOR_LOW = { 0.1f, 0.5f, 0.5f };
+	std::vector<float> PLAYER_COLOR_DEAD = { 0.0f, 0.0f, 0.0f };
 	std::vector<float> ENEMY_COLOR = { 0.8f , 0.0f , 0.0f };
 	std::vector<float> ENEMY_FOV_COLOR = { 1.0f , 0.5f , 0.5f };
 	std::vector<float> HOSTAGE_COLOR = { 1.0f , 0.0f , 1.0f };

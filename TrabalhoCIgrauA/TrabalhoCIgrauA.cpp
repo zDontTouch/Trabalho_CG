@@ -14,18 +14,18 @@ using namespace Constants;
 
 double previous_mouse_x_position;
 double previous_mouse_y_position;
-float current_player_health = PLAYER_HEALTH;
 
+//this function calculates the angle between the old and the current mouse position, in order to rotate the player object
 double get_mouse_angle(int posX, int posY) {
+	float normalized_previous = sqrt(pow(previous_mouse_x_position, 2) + pow(previous_mouse_y_position, 2));
+	float normalized_current  = sqrt(pow(posX,2) + pow(posY,2));
 
-	float deltaY = posY - previous_mouse_y_position; //hardcoded y coordinate of the tip of the spaceship
-	float deltaX = posX - previous_mouse_x_position; //hardcoded x coordinate of the tip of the spaceship
+	float internal_product = (previous_mouse_x_position * posX) + (previous_mouse_y_position * posY);
 
-	/*
-		cos 0 = <u,v>
-			   |u|.|v|
-	*/
-	return 0;
+	float angle_cos = internal_product / (normalized_previous * normalized_current);
+
+	float angle = acos(angle_cos);
+	return angle;
 }
 
 //setting some game constants
@@ -51,9 +51,11 @@ vector<Shape> map{
 //           creating enemies           //
 //////////////////////////////////////////
 Shape enemy_1 = factory.create_shape(Constants::ENEMY, Vertex(3.0, 4.0));
+Shape enemy_2 = factory.create_shape(Constants::ENEMY, Vertex(-2.0, -4.0));
 
 vector<Shape> enemies{
-	enemy_1
+	enemy_1,
+	enemy_2
 };
 
 //////////////////////////////////////////
@@ -71,9 +73,11 @@ vector<Shape> hostages{
 //   in the same sequence as enemies    //
 //////////////////////////////////////////
 Shape enemy_fov_1 = factory.create_shape(Constants::ENEMY_FOV, enemy_1.vertexes[0]);
+Shape enemy_fov_2 = factory.create_shape(Constants::ENEMY_FOV, enemy_2.vertexes[0]);
 
 vector<Shape> enemy_fov{
-	enemy_fov_1
+	enemy_fov_1,
+	enemy_fov_2
 };
 
 //////////////////////////////////////////
@@ -125,10 +129,36 @@ void DesenhaCena(void)
 	draw_elements();
 	glutSwapBuffers();
 
-	if (current_player_health <= 0) {
-		cout << "GAME OVER" << endl << endl;
+
+	//testing end game conditions
+
+	//player dead
+	if (player.health <= 0) {
+		cout << "********************"<<endl<<"    GAME OVER"<<endl<<"********************"<<endl<<endl<<"Sua vida foi reduzida para 0" << endl << endl;
 		system("pause");
 	}
+
+	//player reached hostage
+	for (int i = 0; i < hostages.size(); i++) {
+		if (player.is_colliding_with(hostages[i])) {
+			cout << "********************" << endl << "    VOCE VENCEU!" << endl << "********************" << endl << endl << "Voce resgatou o refem" << endl << endl;
+			system("pause");
+		}
+	}
+
+	//all enemies are dead
+	bool all_enemies_dead = true;
+	for (int i = 0; i < enemies.size(); i++) {
+		if (enemies[i].health > 0) {
+			all_enemies_dead = false;
+		}
+	}
+
+	if (all_enemies_dead) {
+		cout << "********************" << endl << "    VOCE VENCEU!" << endl << "********************" << endl << endl << "Você eliminou todos os inimigos" << endl << endl;
+		system("pause");
+	}
+
 }
 
 
@@ -212,7 +242,7 @@ void player_movement(int value) {
 			if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
 				player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
 				Sleep(50);
-				current_player_health--;
+				player.health--;
 				player.translate(PLAYER_MOVEMENT_TIC*3, 0, 0, 0);
 				IS_UP_KEY_PRESSED = false;
 				IS_DOWN_KEY_PRESSED = false;
@@ -236,7 +266,7 @@ void player_movement(int value) {
 			if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
 				player.translate(PLAYER_MOVEMENT_TIC, 0, 0, 0);
 				Sleep(50);
-				current_player_health--;
+				player.health--;
 				player.translate(0, PLAYER_MOVEMENT_TIC*3, 0, 0);
 				IS_UP_KEY_PRESSED = false;
 				IS_DOWN_KEY_PRESSED = false;
@@ -260,7 +290,7 @@ void player_movement(int value) {
 			if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
 				player.translate(0, 0, PLAYER_MOVEMENT_TIC, 0);
 				Sleep(50);
-				current_player_health--;
+				player.health--;
 				player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC*3);
 				IS_UP_KEY_PRESSED = false;
 				IS_DOWN_KEY_PRESSED = false;
@@ -284,7 +314,7 @@ void player_movement(int value) {
 			if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
 				player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC);
 				Sleep(50);
-				current_player_health--;
+				player.health--;
 				player.translate(0, 0, PLAYER_MOVEMENT_TIC*3, 0);
 				IS_UP_KEY_PRESSED = false;
 				IS_DOWN_KEY_PRESSED = false;
@@ -294,12 +324,7 @@ void player_movement(int value) {
 		}
 	}
 
-	for (int i = 0;i < hostages.size();i++) {
-		if (player.is_colliding_with(hostages[i])) {
-			cout << "VOCÊ VENCEU!" << endl << endl;
-			system("pause");
-		}
-	}
+	
 
 	glutPostRedisplay();
 	glutTimerFunc(50, player_movement, 1);
