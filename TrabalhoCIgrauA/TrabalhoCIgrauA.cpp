@@ -11,9 +11,13 @@
 #include "Vertex.h"
 #include "Constants.h"
 using namespace Constants;
+using namespace std;
 
-double previous_mouse_x_position;
-double previous_mouse_y_position;
+double player_angle = 0;
+double previous_mouse_x_position = 0.0;
+double previous_mouse_y_position = 10.0;
+bool is_mouse_clicked = false;
+double current_mouse_angle = 0;
 
 //this function calculates the angle between the old and the current mouse position, in order to rotate the player object
 double get_mouse_angle(int posX, int posY) {
@@ -25,12 +29,13 @@ double get_mouse_angle(int posX, int posY) {
 	float angle_cos = internal_product / (normalized_previous * normalized_current);
 
 	float angle = acos(angle_cos);
+
+	//calculating delta to check for negative angles
+	int delta_x = posX - previous_mouse_x_position;
+	int delta_y = posY - previous_mouse_y_position;
+
 	return angle;
 }
-
-//setting some game constants
-float PLAYER_MOVEMENT_TIC = 0.1;
-float ENEMY_MOVEMENT_TIC = 0.1;
 
 bool IS_RIGHT_KEY_PRESSED = false;
 bool IS_LEFT_KEY_PRESSED = false;
@@ -38,6 +43,10 @@ bool IS_UP_KEY_PRESSED = false;
 bool IS_DOWN_KEY_PRESSED = false;
 
 Shape_factory factory;
+
+//creating player
+Shape player = factory.create_shape(Constants::PLAYER, Vertex(-2.0, -2.0));
+
 //////////////////////////////////////////
 //           creating map walls         //
 //////////////////////////////////////////
@@ -89,8 +98,16 @@ vector<Shape> power_ups{
 	powerup_1
 };
 
-//creating player
-Shape player = factory.create_shape(Constants::PLAYER, Vertex(0.0, 0.0));
+
+//////////////////////////////////////////
+//            bullets vector            //
+//////////////////////////////////////////
+
+vector<Shape> bullets{
+
+};
+
+
 
 void draw_elements() {
 	//drawing player
@@ -103,7 +120,7 @@ void draw_elements() {
 
 	//drawing enemies and their FoVs
 	for (int i = 0;i < enemies.size();i++) {
-		if (enemies[i].health != 0) {
+		if (enemies[i].health > 0) {
 			enemies[i].draw();
 			enemy_fov[i].draw();
 		}
@@ -118,6 +135,12 @@ void draw_elements() {
 	for (int i = 0;i < power_ups.size();i++) {
 		hostages[i].draw();
 	}
+
+	//drawing bullets
+	for (int i = 0;i < bullets.size();i++) {
+		bullets[i].draw();
+	}
+
 }
 
 void DesenhaCena(void)
@@ -128,7 +151,6 @@ void DesenhaCena(void)
 	gluOrtho2D(-10.0, 10.0, -10.0, 10.0);
 	draw_elements();
 	glutSwapBuffers();
-
 
 	//testing end game conditions
 
@@ -159,6 +181,14 @@ void DesenhaCena(void)
 		system("pause");
 	}
 
+	//hostage dead
+	for (int i = 0; i < hostages.size(); i++) {
+		if (hostages[i].health <= 0) {
+			cout << "********************" << endl << "    GAME OVER" << endl << "********************" << endl << endl << "O refém foi morto" << endl << endl;
+			system("pause");
+		}
+	}
+
 }
 
 
@@ -166,6 +196,57 @@ void DesenhaCena(void)
 void Inicio(void)
 {
 	glClearColor(0.7f, 0.5f, 0.3f, 50.0f);  // cor de fundo da janela
+}
+
+void check_bullet_collision() {
+
+
+	for (int i = 0;i < bullets.size();i++) {
+		bool bullet_erased = false;
+		//detecting enemy hit
+		for (int j = 0;j < enemies.size();j++) {
+			if (bullets[i].is_colliding_with(enemies[j]) && enemies[j].health>0) {
+				using std::swap;
+				swap(bullets[i], bullets.back());
+				bullets.pop_back();
+				enemies[j].health -= 1;
+				
+				bullet_erased = true;
+				break;
+			}
+		}
+
+		//detecting wall hit only if the bullet didn't collided with enemy
+		if (bullet_erased) {
+			continue;
+		}
+		else {
+			for (int j = 0; j < map.size();j++) {
+				if (bullets[i].is_colliding_with(map[j])) {
+					swap(bullets[i], bullets.back());
+					bullets.pop_back();
+
+					bullet_erased = true;
+					break;
+				}
+			}
+		}
+
+		//detecting hostage hit
+		if (bullet_erased) {
+			continue;
+		}
+		else {
+			for (int j = 0; j < hostages.size();j++) {
+				if (bullets[i].is_colliding_with(hostages[j])) {
+					hostages[j].health -= 1;
+
+					bullet_erased = true;
+					break;
+				}
+			}
+		}
+	}
 }
 
 //ja a função de tratamento de teclas normais exige um unsigned char e dois ints
@@ -185,20 +266,31 @@ void teclasNormais(unsigned char tecla, int x, int y) {
 	case 'D':
 		IS_RIGHT_KEY_PRESSED = true;
 		break;
+	case 'Q':
+		player.rotate(0.02);
+		player_angle += 0.02;
+		break;
+	case 'E':
+		player.rotate(-0.02);
+		player_angle -= 0.02;
+		break;
 	}
 
 }
 
 void mouseMotion(int x, int y) {
-	int mouse_pos_x = x - (glutGet(GLUT_WINDOW_WIDTH) / 2);
-	int mouse_pos_y = (glutGet(GLUT_WINDOW_HEIGHT) / 2) - y;
-	double angle = get_mouse_angle(mouse_pos_x, mouse_pos_y);
+	//position of the mouse related to the player pointing vertex
+	int mouse_pos_x = (x - (glutGet(GLUT_WINDOW_WIDTH) / 2)) - (player.horizontal_middle * 100 /2); 
+	int mouse_pos_y = (((glutGet(GLUT_WINDOW_HEIGHT) / 2) - y)) - ((player.vertical_middle + PLAYER_HEIGHT/2) * 100 / 2);
 
+	double angle = get_mouse_angle(mouse_pos_x, mouse_pos_y);
+	//cout << "angle: " << angle << endl;
 
 	previous_mouse_x_position = mouse_pos_x;
 	previous_mouse_y_position = mouse_pos_y;
 
 	//player.rotate(angle);
+	//glutPostRedisplay();
 }
 
 void teclasNormaisUp(unsigned char tecla, int x, int y) {
@@ -220,6 +312,15 @@ void teclasNormaisUp(unsigned char tecla, int x, int y) {
 				}
 			}
 		}
+	}
+
+}
+
+void move_bullets() {
+	for (int i = 0;i < bullets.size();i++) {
+		//cout << "bullet #" << i << endl;
+		bullets[i].move_bullet();
+		glutPostRedisplay();
 	}
 
 }
@@ -324,11 +425,28 @@ void player_movement(int value) {
 		}
 	}
 
-	
+	move_bullets();
+	check_bullet_collision();
 
 	glutPostRedisplay();
 	glutTimerFunc(50, player_movement, 1);
 
+}
+
+
+
+void mouse_click(int button, int state, int x, int y) {
+	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN && !is_mouse_clicked) {
+		is_mouse_clicked = true;
+		bullets.push_back(factory.create_shape(Constants::BULLET, player.vertexes[0],player_angle));
+		//bullets[bullets.size() - 1].rotate(player_angle,bullets[bullets.size()-1].reference);
+		//cout << "created bullet reference: " << bullets[bullets.size() - 1].reference->pos_x << "," << bullets[bullets.size() - 1].reference->pos_y << endl;
+	}
+	else if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) {
+		is_mouse_clicked = false;
+	}
+
+	glutPostRedisplay();
 }
 
 // Parte principal - ponto de início de execução
@@ -352,6 +470,7 @@ int main(int argc, char **argv)
 	glutKeyboardFunc(teclasNormais);
 	glutKeyboardUpFunc(teclasNormaisUp);
 	glutPassiveMotionFunc(mouseMotion);
+	glutMouseFunc(mouse_click);
 
 	//chama a função
 	glutDisplayFunc(DesenhaCena);

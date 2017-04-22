@@ -18,8 +18,13 @@ namespace Constants {
 	const float HOSTAGE_HEIGHT = 0.1;
 	const float HOSTAGE_WIDTH = 0.1;
 
-	const float BULLET_HEIGHT = 0.01;
+	const float BULLET_HEIGHT = 0.05;
 	const float BULLET_WIDTH = BULLET_HEIGHT;
+
+	//setting some game constants
+	const float PLAYER_MOVEMENT_TIC = 0.1;
+	const float ENEMY_MOVEMENT_TIC = 0.1;
+	const float BULLET_MOVEMENT_TIC = 0.15;
 
 	//define player and enemies health
 	const float PLAYER_HEALTH = 3;
@@ -35,7 +40,7 @@ namespace Constants {
 	std::vector<float> ENEMY_COLOR = { 0.8f , 0.0f , 0.0f };
 	std::vector<float> ENEMY_FOV_COLOR = { 1.0f , 0.5f , 0.5f };
 	std::vector<float> HOSTAGE_COLOR = { 1.0f , 0.0f , 1.0f };
-	std::vector<float> BULLET_COLOR = { 0.0f , 0.0f , 0.0f };
+	std::vector<float> BULLET_COLOR = { 1.0f , 1.0f , 0.5f };
 	std::vector<float> POWERUP_COLOR = { 255.0f, 246.0f, 0.0f };
 
 	enum Object_Type

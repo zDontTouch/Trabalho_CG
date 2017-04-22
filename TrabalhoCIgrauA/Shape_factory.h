@@ -52,14 +52,7 @@ public:
 			return ret;
 			break;
 		}
-		case Constants::BULLET:
-		{
-			vector<Vertex> vert{ anchor, Vertex(anchor.pos_x + BULLET_WIDTH,anchor.pos_y), Vertex(anchor.pos_x + BULLET_WIDTH,anchor.pos_y - BULLET_HEIGHT), Vertex(anchor.pos_x,anchor.pos_y - BULLET_HEIGHT) };
-			Shape ret(type, vert);
-			return ret;
-			break;
-		}
-
+		
 		}
 
 	}
@@ -68,6 +61,15 @@ public:
 		vector<Vertex> vert{ anchor, Vertex(anchor.pos_x+width,anchor.pos_y), Vertex(anchor.pos_x + width,anchor.pos_y - height), Vertex(anchor.pos_x,anchor.pos_y-height) };
 		Shape ret(type, vert);
 		return ret;
+	}
+
+	Shape create_shape(int type, Vertex anchor, float angle) {
+		if(type == Constants::BULLET)
+		{
+			vector<Vertex> vert{ Vertex(anchor.pos_x - BULLET_WIDTH / 2, anchor.pos_y + BULLET_HEIGHT), Vertex(anchor.pos_x + BULLET_WIDTH / 2, anchor.pos_y + BULLET_HEIGHT), Vertex(anchor.pos_x + BULLET_WIDTH / 2, anchor.pos_y), Vertex(anchor.pos_x - BULLET_WIDTH / 2, anchor.pos_y) };
+			Shape ret(type,vert,anchor,angle);
+			return ret;
+		}
 	}
 
 };

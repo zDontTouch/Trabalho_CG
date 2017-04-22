@@ -86,6 +86,10 @@ public:
 	int type;
 	std::vector<Vertex> vertexes;
 	float health; //if the shape is aplayer, enemy or hostage, it has a health value
+	Vertex reference = Vertex(0.0,0.0); //if the shape is a bullet, it has a vertex as reference of the point where it was shot
+	float vertical_middle;
+	float horizontal_middle;
+	float angle;
 
 	Shape(int type, std::vector<Vertex> vertexes) {
 		this->type = type;
@@ -94,13 +98,33 @@ public:
 		{
 		case PLAYER:
 			health = PLAYER_HEALTH;
+			vertical_middle = ((this->vertexes[1].pos_y + this->vertexes[0].pos_y) / 2);
+			horizontal_middle = this->vertexes[0].pos_x;
 			break;
 		case ENEMY:
 			health = ENEMY_HEALTH;
+			vertical_middle = ((this->vertexes[1].pos_y + this->vertexes[0].pos_y) / 2);
+			horizontal_middle = this->vertexes[0].pos_x;
 			break;
 		case HOSTAGE:
 			health = HOSTAGE_HEALTH;
+			break;
+		case ENEMY_FOV:
+			vertical_middle = ((this->vertexes[0].pos_y + this->vertexes[2].pos_y) / 2);
+			horizontal_middle = this->vertexes[2].pos_x;
 		default:
+			break;
+		}
+	}
+
+	Shape(int type, std::vector<Vertex> vertexes, Vertex reference, float angle) {
+		this->type = type;
+		this->vertexes = vertexes;
+		switch (type)
+		{
+		case BULLET:
+			this->reference = reference;
+			this->angle = angle;
 			break;
 		}
 	}
@@ -112,13 +136,78 @@ public:
 			vertexes[v].pos_y += direction_up;
 			vertexes[v].pos_y -= direction_down;
 		}
+
+		this->vertical_middle += direction_up;
+		this->vertical_middle -= direction_down;
+		this->horizontal_middle += direction_rigth;
+		this->horizontal_middle -= direction_left;
 	}
 
 	void rotate(float angle) {
-		for (int v = 0; v < vertexes.size(); v++) {
-			vertexes[v].pos_x = vertexes[v].pos_x * cos(angle) - vertexes[v].pos_y * sin(angle);
-			vertexes[v].pos_y = vertexes[v].pos_x * sin(angle) - vertexes[v].pos_y * cos(angle);
+
+		for (int i = 0; i < this->vertexes.size(); i++) {
+			//translate to origin
+			this->vertexes[i].pos_x -= this->horizontal_middle;
+			this->vertexes[i].pos_y -= this->vertical_middle;
+
+			//apply rotation
+			double angle_sin = sin(angle);
+			double angle_cos = cos(angle);
+
+			double new_x = this->vertexes[i].pos_x * angle_cos - this->vertexes[i].pos_y * angle_sin;
+			double new_y = this->vertexes[i].pos_x * angle_sin + this->vertexes[i].pos_y * angle_cos;
+
+			//revert translation to origin
+			this->vertexes[i].pos_x = new_x + horizontal_middle;
+			this->vertexes[i].pos_y = new_y + vertical_middle;
 		}
+	}
+
+	void rotate(float angle, Vertex rotation_reference) {
+
+		for (int i = 0; i < this->vertexes.size(); i++) {
+			//translate to origin
+			this->vertexes[i].pos_x -= rotation_reference.pos_x;
+			this->vertexes[i].pos_y -= rotation_reference.pos_y;
+
+			//apply rotation
+			double angle_sin = sin(angle);
+			double angle_cos = cos(angle);
+
+			double new_x = this->vertexes[i].pos_x * angle_cos - this->vertexes[i].pos_y * angle_sin;
+			double new_y = this->vertexes[i].pos_x * angle_sin + this->vertexes[i].pos_y * angle_cos;
+
+			//revert translation to origin
+			this->vertexes[i].pos_x = new_x + rotation_reference.pos_x;
+			this->vertexes[i].pos_y = new_y + rotation_reference.pos_y;
+		}
+	}
+
+	void move_bullet() {
+
+		//moving bullet to origin acording to reference point
+		for (int i = 0; i < this->vertexes.size(); i++) {
+			this->vertexes[i].pos_x -= this->reference.pos_x;
+			this->vertexes[i].pos_y -= this->reference.pos_y;
+		}
+
+		//undoing the rotation of the bullet
+		this->rotate(angle * -1,this->reference);
+
+		//moving bullet
+		for(int i=0;i<this->vertexes.size();i++){
+			this->vertexes[i].pos_y += BULLET_MOVEMENT_TIC;
+		}
+		
+		//redoing rotation
+		this->rotate(angle,this->reference);
+
+		//back to original position
+		for (int i = 0; i < this->vertexes.size(); i++) {
+			this->vertexes[i].pos_x += this->reference.pos_x;
+			this->vertexes[i].pos_y += this->reference.pos_y;
+		}
+
 	}
 
 	bool is_colliding_with(Shape s) {
@@ -192,5 +281,6 @@ public:
 		ret.translate(direction_up, direction_down, direction_left, direction_rigth);
 		return ret;
 	}
+
 };
 
