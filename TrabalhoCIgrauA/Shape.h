@@ -117,6 +117,35 @@ public:
 		}
 	}
 
+	Shape(int type, std::vector<Vertex> vertexes, float initial_angle) {
+		this->type = type;
+		this->vertexes = vertexes;
+		switch (type)
+		{
+		case PLAYER:
+			health = PLAYER_HEALTH;
+			vertical_middle = ((this->vertexes[1].pos_y + this->vertexes[0].pos_y) / 2);
+			horizontal_middle = this->vertexes[0].pos_x;
+			break;
+		case ENEMY:
+			health = ENEMY_HEALTH;
+			vertical_middle = ((this->vertexes[1].pos_y + this->vertexes[0].pos_y) / 2);
+			horizontal_middle = this->vertexes[0].pos_x;
+			this->rotate(initial_angle);
+			this->angle = initial_angle;
+			break;
+		case HOSTAGE:
+			health = HOSTAGE_HEALTH;
+			break;
+		case ENEMY_FOV:
+			vertical_middle = ((this->vertexes[0].pos_y + this->vertexes[2].pos_y) / 2);
+			horizontal_middle = this->vertexes[2].pos_x;
+		default:
+			break;
+		}
+
+	}
+
 	Shape(int type, std::vector<Vertex> vertexes, Vertex reference, float angle) {
 		this->type = type;
 		this->vertexes = vertexes;
@@ -212,6 +241,10 @@ public:
 
 	bool is_colliding_with(Shape s) {
 
+		if (s.type == ENEMY) {
+			s.rotate(s.angle *-1);
+		}
+
 		for (int i = 0; i < this->vertexes.size(); i++) {
 			if (is_vertex_inside(s, this->vertexes[i]))
 				return true;
@@ -220,6 +253,10 @@ public:
 		for (int i = 0; i < s.vertexes.size(); i++) {
 			if (is_vertex_inside(*this, s.vertexes[i]))
 				return true;
+		}
+
+		if (s.type == ENEMY) {
+			s.rotate(s.angle);
 		}
 
 		return false;

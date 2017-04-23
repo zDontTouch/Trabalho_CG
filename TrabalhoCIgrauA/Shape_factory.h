@@ -70,6 +70,13 @@ public:
 			Shape ret(type,vert,anchor,angle);
 			return ret;
 		}
+		else {
+			if (type == ENEMY) {
+				vector<Vertex> vert{ anchor, Vertex(anchor.pos_x + (ENEMY_WIDTH / 2), anchor.pos_y - ENEMY_HEIGHT) , Vertex(anchor.pos_x - (ENEMY_WIDTH / 2), anchor.pos_y - ENEMY_HEIGHT) };
+				Shape ret(type, vert, angle);
+				return ret;
+			}
+		}
 	}
 
 };

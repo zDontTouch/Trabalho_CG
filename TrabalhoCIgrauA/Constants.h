@@ -3,17 +3,17 @@
 namespace Constants {
 
 	//definig contants to the game elements' size
-	const float PLAYER_HEIGHT = 0.3;
-	const float PLAYER_WIDTH = 0.25;
+	const float PLAYER_HEIGHT = 0.4;
+	const float PLAYER_WIDTH = 0.35;
 
-	const float ENEMY_HEIGHT = 0.3;
-	const float ENEMY_WIDTH = 0.25;
+	const float ENEMY_HEIGHT = 0.4;
+	const float ENEMY_WIDTH = 0.35;
 	
 	const float POWERUP_HEIGHT = 0.3;
 	const float POWERUP_WIDTH = POWERUP_HEIGHT;
 
-	const float ENEMY_FOV_HEIGHT = 0.5;
-	const float ENEMY_FOV_WIDTH = 0.4;
+	const float ENEMY_FOV_HEIGHT = 2.0;
+	const float ENEMY_FOV_WIDTH = 3.0;
 
 	const float HOSTAGE_HEIGHT = 0.1;
 	const float HOSTAGE_WIDTH = 0.1;

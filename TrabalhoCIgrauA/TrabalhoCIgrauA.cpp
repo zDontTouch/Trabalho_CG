@@ -18,6 +18,7 @@ double previous_mouse_x_position = 0.0;
 double previous_mouse_y_position = 10.0;
 bool is_mouse_clicked = false;
 double current_mouse_angle = 0;
+int magazine = 15;
 
 //this function calculates the angle between the old and the current mouse position, in order to rotate the player object
 double get_mouse_angle(int posX, int posY) {
@@ -45,35 +46,59 @@ bool IS_DOWN_KEY_PRESSED = false;
 Shape_factory factory;
 
 //creating player
-Shape player = factory.create_shape(Constants::PLAYER, Vertex(-2.0, -2.0));
+Shape player = factory.create_shape(Constants::PLAYER, Vertex(8.0, -6.0));
 
 //////////////////////////////////////////
 //           creating map walls         //
 //////////////////////////////////////////
-Shape wall1 = factory.create_shape(Constants::WALL, Vertex(-5.0, 4.0), 2.0, 3.0);
+Shape wall1 = factory.create_shape(Constants::WALL, Vertex(4.5, 4.0), 10.0, 0.5);
+Shape wall2 = factory.create_shape(Constants::WALL, Vertex(-10.0, 5.0), 0.5, 5.0);
+Shape wall3 = factory.create_shape(Constants::WALL, Vertex(-3.35, 10.0), 3.5, 0.5);
+Shape wall4 = factory.create_shape(Constants::WALL, Vertex(-1.0, 9.0), 7.0, 0.5);
+Shape wall5 = factory.create_shape(Constants::WALL, Vertex(-0.85, 9.0), 0.5, 7.0);
+Shape wall6 = factory.create_shape(Constants::WALL, Vertex(-8.0, -8.0), 3.0, 0.5);
+Shape wall7 = factory.create_shape(Constants::WALL, Vertex(-8.35, -6.0), 0.5, 8.35);
+Shape wall9 = factory.create_shape(Constants::WALL, Vertex(-5.5, 2.0), 8.0, 0.5);
+Shape wall10 = factory.create_shape(Constants::WALL, Vertex(6.5, 7.0), 7.0, 0.5);
+Shape wall11 = factory.create_shape(Constants::WALL, Vertex(6.5, 0.0), 0.5, 6.5);
+Shape wall12 = factory.create_shape(Constants::WALL, Vertex(0.0, 0.0), 6.5, 0.5);
+Shape wall13 = factory.create_shape(Constants::WALL, Vertex(0.5, 0.0), 0.5, 4.0);
 
 vector<Shape> map{
-	wall1
+	wall1,
+	wall2,
+	wall3,
+	wall4,
+	wall5,
+	wall6,
+	wall7,
+	wall9,
+	wall10,
+	wall11,
+	wall12,
+	wall13
 };
 
 //////////////////////////////////////////
 //           creating enemies           //
 //////////////////////////////////////////
-Shape enemy_1 = factory.create_shape(Constants::ENEMY, Vertex(3.0, 4.0));
-Shape enemy_2 = factory.create_shape(Constants::ENEMY, Vertex(-2.0, -4.0));
+Shape enemy_1 = factory.create_shape(Constants::ENEMY, Vertex(-9.0, 8.5), 35);
+//Shape enemy_2 = factory.create_shape(Constants::ENEMY, Vertex(-2.0, -4.0));
 
 vector<Shape> enemies{
-	enemy_1,
-	enemy_2
+	enemy_1
+	//enemy_2
 };
 
 //////////////////////////////////////////
 //           creating hostages          //
 //////////////////////////////////////////
-Shape hostage_1 = factory.create_shape(Constants::HOSTAGE, Vertex(-3.0, -4.0));
+Shape hostage_1 = factory.create_shape(Constants::HOSTAGE, Vertex(-9.3, 6.0));
+Shape hostage_2 = factory.create_shape(Constants::HOSTAGE, Vertex(-8.8, 6.0));
 
 vector<Shape> hostages{
-	hostage_1
+	hostage_1,
+	hostage_2
 };
 
 //////////////////////////////////////////
@@ -81,12 +106,12 @@ vector<Shape> hostages{
 // ps: the enemy FoVs must be created   //
 //   in the same sequence as enemies    //
 //////////////////////////////////////////
-Shape enemy_fov_1 = factory.create_shape(Constants::ENEMY_FOV, enemy_1.vertexes[0]);
-Shape enemy_fov_2 = factory.create_shape(Constants::ENEMY_FOV, enemy_2.vertexes[0]);
+//Shape enemy_fov_1 = factory.create_shape(Constants::ENEMY_FOV, enemy_1.vertexes[0]);
+//Shape enemy_fov_2 = factory.create_shape(Constants::ENEMY_FOV, enemy_2.vertexes[0]);
 
 vector<Shape> enemy_fov{
-	enemy_fov_1,
-	enemy_fov_2
+	//enemy_fov_1
+	//enemy_fov_2
 };
 
 //////////////////////////////////////////
@@ -107,7 +132,75 @@ vector<Shape> bullets{
 
 };
 
+void draw_hud() {
+	//draw elements to represent player health and magazine bullets remaining
 
+	//draw HUD box
+	glColor3f(0.0, 0.0, 0.0);
+	glBegin(GL_QUADS);
+	glVertex2f(6.0, -8.0);
+	glVertex2f(9.9, -8.0);
+	glVertex2f(9.9, -9.9);
+	glVertex2f(6.0, -9.9);
+	glEnd();
+
+	//health
+	if (player.health < 1) {
+		//no drawing
+	}
+	else if (player.health < 2) {
+		glColor3f(1.0, 0.0, 0.0);
+		glBegin(GL_QUADS);
+		glVertex2f(8.5, -9.3);
+		glVertex2f(9.5, -9.3);
+		glVertex2f(9.5, -9.6);
+		glVertex2f(8.5, -9.6);
+		glEnd();
+	}
+	else if (player.health < 3) {
+		glColor3f(1.0, 0.0, 0.0);
+		glBegin(GL_QUADS);
+		glVertex2f(8.5, -9.3);
+		glVertex2f(9.5, -9.3);
+		glVertex2f(9.5, -9.6);
+		glVertex2f(8.5, -9.6);
+		glEnd();
+
+		glColor3f(1.0, 0.0, 0.0);
+		glBegin(GL_QUADS);
+		glVertex2f(8.5, -8.9);
+		glVertex2f(9.5, -8.9);
+		glVertex2f(9.5, -9.2);
+		glVertex2f(8.5, -9.2);
+		glEnd();
+	}
+	else if (player.health < 4) {
+		glColor3f(1.0, 0.0, 0.0);
+		glBegin(GL_QUADS);
+		glVertex2f(8.5, -9.3);
+		glVertex2f(9.5, -9.3);
+		glVertex2f(9.5, -9.6);
+		glVertex2f(8.5, -9.6);
+		glEnd();
+
+		glColor3f(1.0, 0.0, 0.0);
+		glBegin(GL_QUADS);
+		glVertex2f(8.5, -8.9);
+		glVertex2f(9.5, -8.9);
+		glVertex2f(9.5, -9.2);
+		glVertex2f(8.5, -9.2);
+		glEnd();
+
+		glColor3f(1.0, 0.0, 0.0);
+		glBegin(GL_QUADS);
+		glVertex2f(8.5, -8.5);
+		glVertex2f(9.5, -8.5);
+		glVertex2f(9.5, -8.8);
+		glVertex2f(8.5, -8.8);
+		glEnd();
+	}
+	
+}
 
 void draw_elements() {
 	//drawing player
@@ -119,10 +212,11 @@ void draw_elements() {
 	}
 
 	//drawing enemies and their FoVs
+	//wenemy_fov_1.rotate(35, enemy_1.vertexes[0]);
 	for (int i = 0;i < enemies.size();i++) {
 		if (enemies[i].health > 0) {
 			enemies[i].draw();
-			enemy_fov[i].draw();
+			//enemy_fov[i].draw();
 		}
 	}
 
@@ -141,6 +235,8 @@ void draw_elements() {
 		bullets[i].draw();
 	}
 
+	draw_hud();
+
 }
 
 void DesenhaCena(void)
@@ -156,15 +252,15 @@ void DesenhaCena(void)
 
 	//player dead
 	if (player.health <= 0) {
-		cout << "********************"<<endl<<"    GAME OVER"<<endl<<"********************"<<endl<<endl<<"Sua vida foi reduzida para 0" << endl << endl;
-		system("pause");
+		MessageBox(NULL, (LPCWSTR)L"GAME OVER\nSua vida foi reduzida para 0", (LPCWSTR)L"GAME OVER", MB_OK);
+		glutLeaveMainLoop();
 	}
 
 	//player reached hostage
 	for (int i = 0; i < hostages.size(); i++) {
 		if (player.is_colliding_with(hostages[i])) {
-			cout << "********************" << endl << "    VOCE VENCEU!" << endl << "********************" << endl << endl << "Voce resgatou o refem" << endl << endl;
-			system("pause");
+			MessageBox(NULL, (LPCWSTR)L"VOCÊ VENCEU!\nVocê resgatou o(s) refém(ns)", (LPCWSTR)L"GAME OVER", MB_OK);
+			glutLeaveMainLoop();
 		}
 	}
 
@@ -177,15 +273,15 @@ void DesenhaCena(void)
 	}
 
 	if (all_enemies_dead) {
-		cout << "********************" << endl << "    VOCE VENCEU!" << endl << "********************" << endl << endl << "Você eliminou todos os inimigos" << endl << endl;
-		system("pause");
+		MessageBox(NULL, (LPCWSTR)L"VOCÊ VENCEU!\nVocê eliminou todos os inimigos", (LPCWSTR)L"GAME OVER", MB_OK);
+		glutLeaveMainLoop();
 	}
 
 	//hostage dead
 	for (int i = 0; i < hostages.size(); i++) {
 		if (hostages[i].health <= 0) {
-			cout << "********************" << endl << "    GAME OVER" << endl << "********************" << endl << endl << "O refém foi morto" << endl << endl;
-			system("pause");
+			MessageBox(NULL, (LPCWSTR)L"GAME OVER\nUm refém foi morto", (LPCWSTR)L"GAME OVER", MB_OK);
+			glutLeaveMainLoop();
 		}
 	}
 
@@ -206,6 +302,7 @@ void check_bullet_collision() {
 		//detecting enemy hit
 		for (int j = 0;j < enemies.size();j++) {
 			if (bullets[i].is_colliding_with(enemies[j]) && enemies[j].health>0) {
+				MessageBox(NULL, (LPCWSTR)L"GAME OVER\nIS COLLIDING", (LPCWSTR)L"GAME OVER", MB_OK);
 				using std::swap;
 				swap(bullets[i], bullets.back());
 				bullets.pop_back();
@@ -267,12 +364,15 @@ void teclasNormais(unsigned char tecla, int x, int y) {
 		IS_RIGHT_KEY_PRESSED = true;
 		break;
 	case 'Q':
-		player.rotate(0.02);
-		player_angle += 0.02;
+		player.rotate(0.2);
+		player_angle += 0.2;
 		break;
 	case 'E':
-		player.rotate(-0.02);
-		player_angle -= 0.02;
+		player.rotate(-0.2);
+		player_angle -= 0.2;
+		break;
+	case 'I':
+		cout << enemy_1.vertexes[0].pos_x << "-" << enemy_1.vertexes[0].pos_y << endl;
 		break;
 	}
 
@@ -327,28 +427,32 @@ void move_bullets() {
 
 void player_movement(int value) {
 
-	
-
 	if (IS_DOWN_KEY_PRESSED) {
 		Shape teste = player.simulate_translation(0, PLAYER_MOVEMENT_TIC, 0, 0);
 		//testing wall collision
+		bool no_wall_collision = true;
 		for (int i = 0;i < map.size();i++) {
-			if (!teste.is_colliding_with(map[i])) {
-				player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
+			if (teste.is_colliding_with(map[i])) {
+				no_wall_collision = false;
 			}
+		}
+		if (no_wall_collision) {
+			player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
 		}
 
 		//testing enemy and FoV collision
 		for (int i = 0;i < enemies.size();i++) {
-			if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
-				player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
-				Sleep(50);
-				player.health--;
-				player.translate(PLAYER_MOVEMENT_TIC*3, 0, 0, 0);
-				IS_UP_KEY_PRESSED = false;
-				IS_DOWN_KEY_PRESSED = false;
-				IS_LEFT_KEY_PRESSED = false;
-				IS_RIGHT_KEY_PRESSED = false;
+			if (enemies[i].health > 0) {
+				if (player.is_colliding_with(enemies[i])/* || player.is_colliding_with(enemy_fov[i])*/) {
+					player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
+					Sleep(50);
+					player.health--;
+					player.translate(PLAYER_MOVEMENT_TIC * 3, 0, 0, 0);
+					IS_UP_KEY_PRESSED = false;
+					IS_DOWN_KEY_PRESSED = false;
+					IS_LEFT_KEY_PRESSED = false;
+					IS_RIGHT_KEY_PRESSED = false;
+				}
 			}
 		}
 	}
@@ -356,23 +460,29 @@ void player_movement(int value) {
 	if (IS_UP_KEY_PRESSED) {
 		Shape teste = player.simulate_translation(PLAYER_MOVEMENT_TIC, 0, 0, 0);
 		//testing wall collision
+		bool no_wall_collision = true;
 		for (int i = 0;i < map.size();i++) {
-			if (!teste.is_colliding_with(map[i])) {
-				player.translate(PLAYER_MOVEMENT_TIC, 0, 0, 0);
+			if (teste.is_colliding_with(map[i])) {
+				no_wall_collision = false;
 			}
+		}
+		if (no_wall_collision) {
+			player.translate(PLAYER_MOVEMENT_TIC, 0, 0, 0);
 		}
 
 		//testing enemy and FoV collision
 		for (int i = 0;i < enemies.size();i++) {
-			if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
-				player.translate(PLAYER_MOVEMENT_TIC, 0, 0, 0);
-				Sleep(50);
-				player.health--;
-				player.translate(0, PLAYER_MOVEMENT_TIC*3, 0, 0);
-				IS_UP_KEY_PRESSED = false;
-				IS_DOWN_KEY_PRESSED = false;
-				IS_LEFT_KEY_PRESSED = false;
-				IS_RIGHT_KEY_PRESSED = false;
+			if (enemies[i].health > 0) {
+				if (player.is_colliding_with(enemies[i]) /*|| player.is_colliding_with(enemy_fov[i])*/) {
+					player.translate(PLAYER_MOVEMENT_TIC, 0, 0, 0);
+					Sleep(50);
+					player.health--;
+					player.translate(0, PLAYER_MOVEMENT_TIC * 3, 0, 0);
+					IS_UP_KEY_PRESSED = false;
+					IS_DOWN_KEY_PRESSED = false;
+					IS_LEFT_KEY_PRESSED = false;
+					IS_RIGHT_KEY_PRESSED = false;
+				}
 			}
 		}
 	}
@@ -380,23 +490,29 @@ void player_movement(int value) {
 	if (IS_LEFT_KEY_PRESSED) {
 		Shape teste = player.simulate_translation(0, 0, PLAYER_MOVEMENT_TIC, 0);
 		//testing wall collision
+		bool no_wall_collision = true;
 		for (int i = 0;i < map.size();i++) {
-			if (!teste.is_colliding_with(map[i])) {
-				player.translate(0, 0, PLAYER_MOVEMENT_TIC, 0);
+			if (teste.is_colliding_with(map[i])) {
+				no_wall_collision = false;
 			}
+		}
+		if (no_wall_collision) {
+			player.translate(0,0,PLAYER_MOVEMENT_TIC,0);
 		}
 
 		//testing enemy and FoV collision
 		for (int i = 0;i < enemies.size();i++) {
-			if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
-				player.translate(0, 0, PLAYER_MOVEMENT_TIC, 0);
-				Sleep(50);
-				player.health--;
-				player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC*3);
-				IS_UP_KEY_PRESSED = false;
-				IS_DOWN_KEY_PRESSED = false;
-				IS_LEFT_KEY_PRESSED = false;
-				IS_RIGHT_KEY_PRESSED = false;
+			if (enemies[i].health > 0) {
+				if (player.is_colliding_with(enemies[i])/* || player.is_colliding_with(enemy_fov[i])*/) {
+					player.translate(0, 0, PLAYER_MOVEMENT_TIC, 0);
+					Sleep(50);
+					player.health--;
+					player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC * 3);
+					IS_UP_KEY_PRESSED = false;
+					IS_DOWN_KEY_PRESSED = false;
+					IS_LEFT_KEY_PRESSED = false;
+					IS_RIGHT_KEY_PRESSED = false;
+				}
 			}
 		}
 	}
@@ -404,23 +520,29 @@ void player_movement(int value) {
 	if (IS_RIGHT_KEY_PRESSED) {
 		Shape teste = player.simulate_translation(0, 0, 0, PLAYER_MOVEMENT_TIC);
 		//testing wall collision
+		bool no_wall_collision = true;
 		for (int i = 0;i < map.size();i++) {
-			if (!teste.is_colliding_with(map[i])) {
-				player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC);
+			if (teste.is_colliding_with(map[i])) {
+				no_wall_collision = false;
 			}
+		}
+		if (no_wall_collision) {
+			player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC);
 		}
 
 		//testing enemy and FoV collision
 		for (int i = 0;i < enemies.size();i++) {
-			if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
-				player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC);
-				Sleep(50);
-				player.health--;
-				player.translate(0, 0, PLAYER_MOVEMENT_TIC*3, 0);
-				IS_UP_KEY_PRESSED = false;
-				IS_DOWN_KEY_PRESSED = false;
-				IS_LEFT_KEY_PRESSED = false;
-				IS_RIGHT_KEY_PRESSED = false;
+			if (enemies[i].health > 0) {
+				if (player.is_colliding_with(enemies[i])/* || player.is_colliding_with(enemy_fov[i])*/) {
+					player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC);
+					Sleep(50);
+					player.health--;
+					player.translate(0, 0, PLAYER_MOVEMENT_TIC * 3, 0);
+					IS_UP_KEY_PRESSED = false;
+					IS_DOWN_KEY_PRESSED = false;
+					IS_LEFT_KEY_PRESSED = false;
+					IS_RIGHT_KEY_PRESSED = false;
+				}
 			}
 		}
 	}
@@ -455,6 +577,8 @@ void mouse_click(int button, int state, int x, int y) {
 // Especifica a função de callback de desenho
 int main(int argc, char **argv)
 {
+
+	FreeConsole();
 	glutInit(&argc, argv);
 	glutInitWindowSize(1000,1000);
 
