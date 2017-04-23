@@ -140,6 +140,7 @@ public:
 		case ENEMY_FOV:
 			vertical_middle = ((this->vertexes[0].pos_y + this->vertexes[2].pos_y) / 2);
 			horizontal_middle = this->vertexes[2].pos_x;
+			break;
 		default:
 			break;
 		}
@@ -154,6 +155,11 @@ public:
 		case BULLET:
 			this->reference = reference;
 			this->angle = angle;
+			break;
+		case ENEMY_FOV:
+			this->reference = reference;
+			this->angle = angle;
+			this->rotate(angle, reference);
 			break;
 		}
 	}

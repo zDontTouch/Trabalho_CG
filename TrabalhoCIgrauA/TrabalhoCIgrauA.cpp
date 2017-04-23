@@ -82,7 +82,7 @@ vector<Shape> map{
 //////////////////////////////////////////
 //           creating enemies           //
 //////////////////////////////////////////
-Shape enemy_1 = factory.create_shape(Constants::ENEMY, Vertex(-9.0, 8.5), 35);
+Shape enemy_1 = factory.create_shape(Constants::ENEMY, Vertex(-9.5, 9.0), 35);
 //Shape enemy_2 = factory.create_shape(Constants::ENEMY, Vertex(-2.0, -4.0));
 
 vector<Shape> enemies{
@@ -106,12 +106,10 @@ vector<Shape> hostages{
 // ps: the enemy FoVs must be created   //
 //   in the same sequence as enemies    //
 //////////////////////////////////////////
-//Shape enemy_fov_1 = factory.create_shape(Constants::ENEMY_FOV, enemy_1.vertexes[0]);
-//Shape enemy_fov_2 = factory.create_shape(Constants::ENEMY_FOV, enemy_2.vertexes[0]);
+Shape enemy_fov_1 = factory.create_shape(Constants::ENEMY_FOV, enemy_1.vertexes[0],enemy_1.angle);
 
 vector<Shape> enemy_fov{
-	//enemy_fov_1
-	//enemy_fov_2
+	enemy_fov_1
 };
 
 //////////////////////////////////////////
@@ -199,7 +197,147 @@ void draw_hud() {
 		glVertex2f(8.5, -8.8);
 		glEnd();
 	}
-	
+
+	//player remaining bullets
+	if (magazine == 0) {
+		//no drawing
+	}
+	if (magazine > 0) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(6.2, -8.2);
+		glVertex2f(6.5, -8.2);
+		glVertex2f(6.5, -8.5);
+		glVertex2f(6.2, -8.5);
+		glEnd();
+	}
+	if (magazine > 1) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(6.6, -8.2);
+		glVertex2f(6.9, -8.2);
+		glVertex2f(6.9, -8.5);
+		glVertex2f(6.6, -8.5);
+		glEnd();
+	}
+	if (magazine > 2) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(7.0, -8.2);
+		glVertex2f(7.3, -8.2);
+		glVertex2f(7.3, -8.5);
+		glVertex2f(7.0, -8.5);
+		glEnd();
+	}
+
+	if (magazine > 3) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(7.4, -8.2);
+		glVertex2f(7.7, -8.2);
+		glVertex2f(7.7, -8.5);
+		glVertex2f(7.4, -8.5);
+		glEnd();
+	}
+	if (magazine > 4) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(7.8, -8.2);
+		glVertex2f(8.1, -8.2);
+		glVertex2f(8.1, -8.5);
+		glVertex2f(7.8, -8.5);
+		glEnd();
+	}
+	if (magazine > 5) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(6.2, -8.6);
+		glVertex2f(6.5, -8.6);
+		glVertex2f(6.5, -8.9);
+		glVertex2f(6.2, -8.9);
+		glEnd();
+	}
+	if (magazine > 6) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(6.6, -8.6);
+		glVertex2f(6.9, -8.6);
+		glVertex2f(6.9, -8.9);
+		glVertex2f(6.6, -8.9);
+		glEnd();
+	}
+	if (magazine > 7) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(7.0, -8.6);
+		glVertex2f(7.3, -8.6);
+		glVertex2f(7.3, -8.9);
+		glVertex2f(7.0, -8.9);
+		glEnd();
+	}
+	if (magazine > 8) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(7.4, -8.6);
+		glVertex2f(7.7, -8.6);
+		glVertex2f(7.7, -8.9);
+		glVertex2f(7.4, -8.9);
+		glEnd();
+	}
+	if (magazine > 9) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(7.8, -8.6);
+		glVertex2f(8.1, -8.6);
+		glVertex2f(8.1, -8.9);
+		glVertex2f(7.8, -8.9);
+		glEnd();
+	}
+	if (magazine > 10) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(6.2, -9.0);
+		glVertex2f(6.5, -9.0);
+		glVertex2f(6.5, -9.4);
+		glVertex2f(6.2, -9.4);
+		glEnd();
+	}
+	if (magazine > 11) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(6.6, -9.0);
+		glVertex2f(6.9, -9.0);
+		glVertex2f(6.9, -9.4);
+		glVertex2f(6.6, -9.4);
+		glEnd();
+	}
+	if (magazine > 12) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(7.0, -9.0);
+		glVertex2f(7.3, -9.0);
+		glVertex2f(7.3, -9.4);
+		glVertex2f(7.0, -9.4);
+		glEnd();
+	}
+	if (magazine > 13) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(7.4, -9.0);
+		glVertex2f(7.7, -9.0);
+		glVertex2f(7.7, -9.4);
+		glVertex2f(7.4, -9.4);
+		glEnd();
+	}
+	if (magazine > 14) {
+		glColor3f(1.0f, 1.0f, 0.5f);
+		glBegin(GL_QUADS);
+		glVertex2f(7.8, -9.0);
+		glVertex2f(8.1, -9.0);
+		glVertex2f(8.1, -9.4);
+		glVertex2f(7.8, -9.4);
+		glEnd();
+	}
 }
 
 void draw_elements() {
@@ -216,7 +354,7 @@ void draw_elements() {
 	for (int i = 0;i < enemies.size();i++) {
 		if (enemies[i].health > 0) {
 			enemies[i].draw();
-			//enemy_fov[i].draw();
+			enemy_fov[i].draw();
 		}
 	}
 
@@ -302,7 +440,6 @@ void check_bullet_collision() {
 		//detecting enemy hit
 		for (int j = 0;j < enemies.size();j++) {
 			if (bullets[i].is_colliding_with(enemies[j]) && enemies[j].health>0) {
-				MessageBox(NULL, (LPCWSTR)L"GAME OVER\nIS COLLIDING", (LPCWSTR)L"GAME OVER", MB_OK);
 				using std::swap;
 				swap(bullets[i], bullets.back());
 				bullets.pop_back();
@@ -418,7 +555,6 @@ void teclasNormaisUp(unsigned char tecla, int x, int y) {
 
 void move_bullets() {
 	for (int i = 0;i < bullets.size();i++) {
-		//cout << "bullet #" << i << endl;
 		bullets[i].move_bullet();
 		glutPostRedisplay();
 	}
@@ -443,7 +579,7 @@ void player_movement(int value) {
 		//testing enemy and FoV collision
 		for (int i = 0;i < enemies.size();i++) {
 			if (enemies[i].health > 0) {
-				if (player.is_colliding_with(enemies[i])/* || player.is_colliding_with(enemy_fov[i])*/) {
+				if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
 					player.translate(0, PLAYER_MOVEMENT_TIC, 0, 0);
 					Sleep(50);
 					player.health--;
@@ -473,7 +609,7 @@ void player_movement(int value) {
 		//testing enemy and FoV collision
 		for (int i = 0;i < enemies.size();i++) {
 			if (enemies[i].health > 0) {
-				if (player.is_colliding_with(enemies[i]) /*|| player.is_colliding_with(enemy_fov[i])*/) {
+				if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
 					player.translate(PLAYER_MOVEMENT_TIC, 0, 0, 0);
 					Sleep(50);
 					player.health--;
@@ -503,7 +639,7 @@ void player_movement(int value) {
 		//testing enemy and FoV collision
 		for (int i = 0;i < enemies.size();i++) {
 			if (enemies[i].health > 0) {
-				if (player.is_colliding_with(enemies[i])/* || player.is_colliding_with(enemy_fov[i])*/) {
+				if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
 					player.translate(0, 0, PLAYER_MOVEMENT_TIC, 0);
 					Sleep(50);
 					player.health--;
@@ -533,7 +669,7 @@ void player_movement(int value) {
 		//testing enemy and FoV collision
 		for (int i = 0;i < enemies.size();i++) {
 			if (enemies[i].health > 0) {
-				if (player.is_colliding_with(enemies[i])/* || player.is_colliding_with(enemy_fov[i])*/) {
+				if (player.is_colliding_with(enemies[i]) || player.is_colliding_with(enemy_fov[i])) {
 					player.translate(0, 0, 0, PLAYER_MOVEMENT_TIC);
 					Sleep(50);
 					player.health--;
@@ -560,9 +696,10 @@ void player_movement(int value) {
 void mouse_click(int button, int state, int x, int y) {
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN && !is_mouse_clicked) {
 		is_mouse_clicked = true;
-		bullets.push_back(factory.create_shape(Constants::BULLET, player.vertexes[0],player_angle));
-		//bullets[bullets.size() - 1].rotate(player_angle,bullets[bullets.size()-1].reference);
-		//cout << "created bullet reference: " << bullets[bullets.size() - 1].reference->pos_x << "," << bullets[bullets.size() - 1].reference->pos_y << endl;
+		if (magazine > 0) {
+			bullets.push_back(factory.create_shape(Constants::BULLET, player.vertexes[0], player_angle));
+			magazine--;
+		}
 	}
 	else if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) {
 		is_mouse_clicked = false;

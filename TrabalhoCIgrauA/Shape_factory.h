@@ -76,6 +76,13 @@ public:
 				Shape ret(type, vert, angle);
 				return ret;
 			}
+			else {
+				if (type == ENEMY_FOV) {
+					vector<Vertex> vert{ Vertex(anchor.pos_x - ENEMY_FOV_WIDTH / 2, anchor.pos_y + ENEMY_FOV_HEIGHT), Vertex(anchor.pos_x + ENEMY_FOV_WIDTH / 2, anchor.pos_y + ENEMY_FOV_HEIGHT), anchor };
+					Shape ret(type, vert, anchor, angle);
+					return ret;
+				}
+			}
 		}
 	}
 
