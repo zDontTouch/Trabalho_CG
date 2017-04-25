@@ -10,8 +10,18 @@
 #include "Shape_factory.h"
 #include "Vertex.h"
 #include "Constants.h"
+#include <time.h>
 using namespace Constants;
 using namespace std;
+
+//game menu value
+//this variable defines if the player is currently on the menu or is already in the game map
+bool is_in_menu = true;
+bool player_in_menu = false;
+int menu_door_selected = 0;
+vector<Vertex> menu_door_1{ Vertex(-99.0,-92.0), Vertex(-97.0,-92.0), Vertex(-97.0,-91.0), Vertex(-99.0,-91.0)};
+vector<Vertex> menu_door_2{ Vertex(-96.5,-92.0), Vertex(-94.5,-92.0), Vertex(-94.5,-91.0), Vertex(-96.5,-91.0)};
+vector<Vertex> menu_door_3{ Vertex(-94.0,-92.0), Vertex(-92.0,-92.0), Vertex(-92.0,-91.0), Vertex(-94.0,-91.0) };
 
 double player_angle = 0;
 double previous_mouse_x_position = 0.0;
@@ -19,6 +29,8 @@ double previous_mouse_y_position = 10.0;
 bool is_mouse_clicked = false;
 double current_mouse_angle = 0;
 int magazine = 15;
+int current_powerup = NONE;
+int powerup_bullets = 0;
 
 //this function calculates the angle between the old and the current mouse position, in order to rotate the player object
 double get_mouse_angle(int posX, int posY) {
@@ -51,33 +63,116 @@ Shape player = factory.create_shape(Constants::PLAYER, Vertex(8.0, -6.0));
 //////////////////////////////////////////
 //           creating map walls         //
 //////////////////////////////////////////
-Shape wall1 = factory.create_shape(Constants::WALL, Vertex(4.5, 4.0), 10.0, 0.5);
-Shape wall2 = factory.create_shape(Constants::WALL, Vertex(-10.0, 5.0), 0.5, 5.0);
-Shape wall3 = factory.create_shape(Constants::WALL, Vertex(-3.35, 10.0), 3.5, 0.5);
-Shape wall4 = factory.create_shape(Constants::WALL, Vertex(-1.0, 9.0), 7.0, 0.5);
-Shape wall5 = factory.create_shape(Constants::WALL, Vertex(-0.85, 9.0), 0.5, 7.0);
-Shape wall6 = factory.create_shape(Constants::WALL, Vertex(-8.0, -8.0), 3.0, 0.5);
-Shape wall7 = factory.create_shape(Constants::WALL, Vertex(-8.35, -6.0), 0.5, 8.35);
-Shape wall9 = factory.create_shape(Constants::WALL, Vertex(-5.5, 2.0), 8.0, 0.5);
-Shape wall10 = factory.create_shape(Constants::WALL, Vertex(6.5, 7.0), 7.0, 0.5);
-Shape wall11 = factory.create_shape(Constants::WALL, Vertex(6.5, 0.0), 0.5, 6.5);
-Shape wall12 = factory.create_shape(Constants::WALL, Vertex(0.0, 0.0), 6.5, 0.5);
-Shape wall13 = factory.create_shape(Constants::WALL, Vertex(0.5, 0.0), 0.5, 4.0);
+//map 1
+Shape wall1_1 = factory.create_shape(Constants::WALL, Vertex(4.5, 4.0), 10.0, 0.5);
+Shape wall1_2 = factory.create_shape(Constants::WALL, Vertex(-10.0, 5.0), 0.5, 5.0);
+Shape wall1_3 = factory.create_shape(Constants::WALL, Vertex(-3.35, 10.0), 3.5, 0.5);
+Shape wall1_4 = factory.create_shape(Constants::WALL, Vertex(-1.0, 9.0), 7.0, 0.5);
+Shape wall1_5 = factory.create_shape(Constants::WALL, Vertex(-0.85, 9.0), 0.5, 7.0);
+Shape wall1_6 = factory.create_shape(Constants::WALL, Vertex(-8.0, -8.0), 3.0, 0.5);
+Shape wall1_7 = factory.create_shape(Constants::WALL, Vertex(-8.35, -6.0), 0.5, 8.35);
+Shape wall1_9 = factory.create_shape(Constants::WALL, Vertex(-5.5, 2.0), 8.0, 0.5);
+Shape wall1_10 = factory.create_shape(Constants::WALL, Vertex(6.5, 7.0), 7.0, 0.5);
+Shape wall1_11 = factory.create_shape(Constants::WALL, Vertex(6.5, 0.0), 0.5, 6.5);
+Shape wall1_12 = factory.create_shape(Constants::WALL, Vertex(0.0, 0.0), 6.5, 0.5);
+Shape wall1_13 = factory.create_shape(Constants::WALL, Vertex(0.5, 0.0), 0.5, 4.0);
+Shape wall1_14 = factory.create_shape(Constants::WALL, Vertex(-11.0, 10.0), 0.2, 22.0);
+Shape wall1_15 = factory.create_shape(Constants::WALL, Vertex(-10.0, 10.0), 22.0, 0.2);
+Shape wall1_16 = factory.create_shape(Constants::WALL, Vertex(-10.0, -9.8), 0.2, 22.0);
+Shape wall1_17 = factory.create_shape(Constants::WALL, Vertex(9.8, 10.0), 22.0, 0.2);
 
-vector<Shape> map{
-	wall1,
-	wall2,
-	wall3,
-	wall4,
-	wall5,
-	wall6,
-	wall7,
-	wall9,
-	wall10,
-	wall11,
-	wall12,
-	wall13
+vector<Shape> map1{
+	wall1_1,
+	wall1_2,
+	wall1_3,
+	wall1_4,
+	wall1_5,
+	wall1_6,
+	wall1_7,
+	wall1_9,
+	wall1_10,
+	wall1_11,
+	wall1_12,
+	wall1_13,
+	wall1_14,
+	wall1_15,
+	wall1_16,
+	wall1_17
 };
+//map 2
+Shape wall2_1 = factory.create_shape(Constants::WALL, Vertex(190.0, 0.0), 0.5, 4.0);
+Shape wall2_2 = factory.create_shape(Constants::WALL, Vertex(194.0, 4.0), 9.0, 0.5);
+Shape wall2_3 = factory.create_shape(Constants::WALL, Vertex(194.0, 10.0), 4.0, 0.5);
+Shape wall2_4 = factory.create_shape(Constants::WALL, Vertex(194.0, 7.0), 0.5, 6.0);
+Shape wall2_5 = factory.create_shape(Constants::WALL, Vertex(202.0, 10.0), 6.0, 0.5);
+Shape wall2_6 = factory.create_shape(Constants::WALL, Vertex(202.0, 6.0), 0.5, 6.0);
+Shape wall2_7 = factory.create_shape(Constants::WALL, Vertex(207.0, 10.0), 2.0, 0.5);
+Shape wall2_8 = factory.create_shape(Constants::WALL, Vertex(202.0, 1.0), 0.5, 8.0);
+Shape wall2_9 = factory.create_shape(Constants::WALL, Vertex(204.0, -6.0), 0.5, 6.0);
+Shape wall2_10 = factory.create_shape(Constants::WALL, Vertex(197.0, -3.0), 0.5, 7.0);
+Shape wall2_11 = factory.create_shape(Constants::WALL, Vertex(200.0, -3.0), 7.0, 0.5);
+Shape wall2_12 = factory.create_shape(Constants::WALL, Vertex(190.0, 10.0), 20.0, 0.15);
+Shape wall2_13 = factory.create_shape(Constants::WALL, Vertex(190.0, 10.0), 0.15, 20.0);
+Shape wall2_14 = factory.create_shape(Constants::WALL, Vertex(209.85, 10.0), 20.0, 0.15);
+Shape wall2_15 = factory.create_shape(Constants::WALL, Vertex(190.0, -9.85), 0.15, 20.0);
+
+vector<Shape> map2{
+	wall2_1,
+	wall2_2,
+	wall2_3,
+	wall2_4,
+	wall2_5,
+	wall2_6,
+	wall2_7,
+	wall2_8,
+	wall2_9,
+	wall2_10,
+	wall2_11,
+	wall2_12,
+	wall2_13,
+	wall2_14,
+	wall2_15
+};
+
+//map 3
+Shape wall3_1 = factory.create_shape(Constants::WALL, Vertex(290.0, 0.5), 0.5, 8.0);
+Shape wall3_2 = factory.create_shape(Constants::WALL, Vertex(294.0, 0.5), 7.0, 0.5);
+Shape wall3_3 = factory.create_shape(Constants::WALL, Vertex(293.0, 8.0), 0.5, 7.0);
+Shape wall3_4 = factory.create_shape(Constants::WALL, Vertex(295.0, 8.0), 4.0, 0.5);
+Shape wall3_5 = factory.create_shape(Constants::WALL, Vertex(300.0, 6.0), 6.0, 0.5);
+Shape wall3_6 = factory.create_shape(Constants::WALL, Vertex(300.0, 0.5), 0.5, 10.0);
+Shape wall3_7 = factory.create_shape(Constants::WALL, Vertex(304.0, 10.0), 4.0, 0.5);
+Shape wall3_8 = factory.create_shape(Constants::WALL, Vertex(307.0, 6.5), 0.5, 3.0);
+Shape wall3_9 = factory.create_shape(Constants::WALL, Vertex(307.0, -6.0), 0.5, 3.0);
+Shape wall3_10 = factory.create_shape(Constants::WALL, Vertex(304.0, -4.0), 6.0, 0.5);
+Shape wall3_11 = factory.create_shape(Constants::WALL, Vertex(297.0, -7.0), 0.5, 7.0);
+Shape wall3_12 = factory.create_shape(Constants::WALL, Vertex(292.0, -8.0), 2.0, 0.5);
+Shape wall3_13 = factory.create_shape(Constants::WALL, Vertex(298.0, -3.0), 0.5, 3.0);
+Shape wall3_14 = factory.create_shape(Constants::WALL, Vertex(290.0, 10.0), 20.0, 0.15);
+Shape wall3_15 = factory.create_shape(Constants::WALL, Vertex(290.0, 10.0), 0.15, 20.0);
+Shape wall3_17 = factory.create_shape(Constants::WALL, Vertex(290.0, -9.85), 0.15, 20.0);
+
+vector<Shape> map3{
+	wall3_1,
+	wall3_2,
+	wall3_3,
+	wall3_4,
+	wall3_5,
+	wall3_6,
+	wall3_7,
+	wall3_8,
+	wall3_9,
+	wall3_10,
+	wall3_11,
+	wall3_12,
+	wall3_13,
+	wall3_14,
+	wall3_15,
+	wall3_17
+};
+
+//official walls vector, which will be set once the player chooses the phase
+vector<Shape> map;
 
 //////////////////////////////////////////
 //           creating enemies           //
@@ -115,10 +210,12 @@ vector<Shape> enemy_fov{
 //////////////////////////////////////////
 //           creating powerups          //
 //////////////////////////////////////////
-Shape powerup_1 = factory.create_shape(Constants::POWERUP, Vertex(-3.0, -6.0));
+Shape powerup_1 = factory.create_shape(Constants::POWERUP, Vertex(8.0, -4.0));
+Shape powerup_2 = factory.create_shape(Constants::POWERUP, Vertex(5.0, -1.0));
 
 vector<Shape> power_ups{
-	powerup_1
+	powerup_1,
+	powerup_2
 };
 
 
@@ -130,16 +227,65 @@ vector<Shape> bullets{
 
 };
 
+
+vector<float> check_hud_color() {
+	switch (current_powerup) {
+	case NONE: {
+		vector<float> ret{ 1.0f, 1.0f, 0.5f };
+		return ret;
+		break;
+	}
+	case DRILL: {
+		return DRILL_BULLET_COLOR;
+		break;
+	}
+	case RICOCHET: {
+		return RICOCHET_BULLET_COLOR;
+		break;
+	}
+	case HOAMING: {
+		return HOAMING_BULLET_COLOR;
+		break;
+	}
+	}
+}
+
+void define_powerup() {
+	
+	current_powerup = (rand() % 3) + 1;
+
+	switch (current_powerup)
+	{
+	case DRILL:
+		powerup_bullets = 3;
+		break;
+	case RICOCHET:
+		powerup_bullets = 5;
+		break;
+	case HOAMING:
+		powerup_bullets = 2;
+		break;
+	}
+}
+
 void draw_hud() {
 	//draw elements to represent player health and magazine bullets remaining
 
+	//float variable to define multiplicity of the position according to the map selected
+	float map_addition = -7;
+	if (menu_door_selected == 2) {
+		map_addition = 193;
+	}
+	else if (menu_door_selected == 3) {
+		map_addition = 293;
+	}
 	//draw HUD box
 	glColor3f(0.0, 0.0, 0.0);
 	glBegin(GL_QUADS);
-	glVertex2f(6.0, -8.0);
-	glVertex2f(9.9, -8.0);
-	glVertex2f(9.9, -9.9);
-	glVertex2f(6.0, -9.9);
+	glVertex2f(6.0 +map_addition, -8.0);
+	glVertex2f(9.9 + map_addition, -8.0);
+	glVertex2f(9.9 + map_addition, -9.9);
+	glVertex2f(6.0 + map_addition, -9.9);
 	glEnd();
 
 	//health
@@ -149,193 +295,202 @@ void draw_hud() {
 	else if (player.health < 2) {
 		glColor3f(1.0, 0.0, 0.0);
 		glBegin(GL_QUADS);
-		glVertex2f(8.5, -9.3);
-		glVertex2f(9.5, -9.3);
-		glVertex2f(9.5, -9.6);
-		glVertex2f(8.5, -9.6);
+		glVertex2f(8.5 + map_addition, -9.3);
+		glVertex2f(9.5 + map_addition, -9.3);
+		glVertex2f(9.5 + map_addition, -9.6);
+		glVertex2f(8.5 + map_addition, -9.6);
 		glEnd();
 	}
 	else if (player.health < 3) {
 		glColor3f(1.0, 0.0, 0.0);
 		glBegin(GL_QUADS);
-		glVertex2f(8.5, -9.3);
-		glVertex2f(9.5, -9.3);
-		glVertex2f(9.5, -9.6);
-		glVertex2f(8.5, -9.6);
+		glVertex2f(8.5 + map_addition, -9.3);
+		glVertex2f(9.5 + map_addition, -9.3);
+		glVertex2f(9.5 + map_addition, -9.6);
+		glVertex2f(8.5 + map_addition, -9.6);
 		glEnd();
 
 		glColor3f(1.0, 0.0, 0.0);
 		glBegin(GL_QUADS);
-		glVertex2f(8.5, -8.9);
-		glVertex2f(9.5, -8.9);
-		glVertex2f(9.5, -9.2);
-		glVertex2f(8.5, -9.2);
+		glVertex2f(8.5 + map_addition, -8.9);
+		glVertex2f(9.5 + map_addition, -8.9);
+		glVertex2f(9.5 + map_addition, -9.2);
+		glVertex2f(8.5 + map_addition, -9.2);
 		glEnd();
 	}
 	else if (player.health < 4) {
 		glColor3f(1.0, 0.0, 0.0);
 		glBegin(GL_QUADS);
-		glVertex2f(8.5, -9.3);
-		glVertex2f(9.5, -9.3);
-		glVertex2f(9.5, -9.6);
-		glVertex2f(8.5, -9.6);
+		glVertex2f(8.5 + map_addition, -9.3);
+		glVertex2f(9.5 + map_addition, -9.3);
+		glVertex2f(9.5 + map_addition, -9.6);
+		glVertex2f(8.5 + map_addition, -9.6);
 		glEnd();
 
 		glColor3f(1.0, 0.0, 0.0);
 		glBegin(GL_QUADS);
-		glVertex2f(8.5, -8.9);
-		glVertex2f(9.5, -8.9);
-		glVertex2f(9.5, -9.2);
-		glVertex2f(8.5, -9.2);
+		glVertex2f(8.5 + map_addition, -8.9);
+		glVertex2f(9.5 + map_addition, -8.9);
+		glVertex2f(9.5 + map_addition, -9.2);
+		glVertex2f(8.5 + map_addition, -9.2);
 		glEnd();
 
 		glColor3f(1.0, 0.0, 0.0);
 		glBegin(GL_QUADS);
-		glVertex2f(8.5, -8.5);
-		glVertex2f(9.5, -8.5);
-		glVertex2f(9.5, -8.8);
-		glVertex2f(8.5, -8.8);
+		glVertex2f(8.5 + map_addition, -8.5);
+		glVertex2f(9.5 + map_addition, -8.5);
+		glVertex2f(9.5 + map_addition, -8.8);
+		glVertex2f(8.5 + map_addition, -8.8);
 		glEnd();
 	}
 
 	//player remaining bullets
-	if (magazine == 0) {
+	vector<float> color = check_hud_color();
+	int bullets_remaining;
+
+	//checking which magazine should be drawn
+	if (current_powerup == NONE)
+		bullets_remaining = magazine;
+	else
+		bullets_remaining = powerup_bullets;
+
+	if (bullets_remaining == 0) {
 		//no drawing
 	}
-	if (magazine > 0) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 0) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(6.2, -8.2);
-		glVertex2f(6.5, -8.2);
-		glVertex2f(6.5, -8.5);
-		glVertex2f(6.2, -8.5);
+		glVertex2f(6.2 + map_addition, -8.2);
+		glVertex2f(6.5 + map_addition, -8.2);
+		glVertex2f(6.5 + map_addition, -8.5);
+		glVertex2f(6.2 + map_addition, -8.5);
 		glEnd();
 	}
-	if (magazine > 1) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 1) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(6.6, -8.2);
-		glVertex2f(6.9, -8.2);
-		glVertex2f(6.9, -8.5);
-		glVertex2f(6.6, -8.5);
+		glVertex2f(6.6 + map_addition, -8.2);
+		glVertex2f(6.9 + map_addition, -8.2);
+		glVertex2f(6.9 + map_addition, -8.5);
+		glVertex2f(6.6 + map_addition, -8.5);
 		glEnd();
 	}
-	if (magazine > 2) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 2) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(7.0, -8.2);
-		glVertex2f(7.3, -8.2);
-		glVertex2f(7.3, -8.5);
-		glVertex2f(7.0, -8.5);
+		glVertex2f(7.0 + map_addition, -8.2);
+		glVertex2f(7.3 + map_addition, -8.2);
+		glVertex2f(7.3 + map_addition, -8.5);
+		glVertex2f(7.0 + map_addition, -8.5);
 		glEnd();
 	}
 
-	if (magazine > 3) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 3) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(7.4, -8.2);
-		glVertex2f(7.7, -8.2);
-		glVertex2f(7.7, -8.5);
-		glVertex2f(7.4, -8.5);
+		glVertex2f(7.4 + map_addition, -8.2);
+		glVertex2f(7.7 + map_addition, -8.2);
+		glVertex2f(7.7 + map_addition, -8.5);
+		glVertex2f(7.4 + map_addition, -8.5);
 		glEnd();
 	}
-	if (magazine > 4) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 4) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(7.8, -8.2);
-		glVertex2f(8.1, -8.2);
-		glVertex2f(8.1, -8.5);
-		glVertex2f(7.8, -8.5);
+		glVertex2f(7.8 + map_addition, -8.2);
+		glVertex2f(8.1 + map_addition, -8.2);
+		glVertex2f(8.1 + map_addition, -8.5);
+		glVertex2f(7.8 + map_addition, -8.5);
 		glEnd();
 	}
-	if (magazine > 5) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 5) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(6.2, -8.6);
-		glVertex2f(6.5, -8.6);
-		glVertex2f(6.5, -8.9);
-		glVertex2f(6.2, -8.9);
+		glVertex2f(6.2 + map_addition, -8.6);
+		glVertex2f(6.5 + map_addition, -8.6);
+		glVertex2f(6.5 + map_addition, -8.9);
+		glVertex2f(6.2 + map_addition, -8.9);
 		glEnd();
 	}
-	if (magazine > 6) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 6) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(6.6, -8.6);
-		glVertex2f(6.9, -8.6);
-		glVertex2f(6.9, -8.9);
-		glVertex2f(6.6, -8.9);
+		glVertex2f(6.6 + map_addition, -8.6);
+		glVertex2f(6.9 + map_addition, -8.6);
+		glVertex2f(6.9 + map_addition, -8.9);
+		glVertex2f(6.6 + map_addition, -8.9);
 		glEnd();
 	}
-	if (magazine > 7) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 7) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(7.0, -8.6);
-		glVertex2f(7.3, -8.6);
-		glVertex2f(7.3, -8.9);
-		glVertex2f(7.0, -8.9);
+		glVertex2f(7.0 + map_addition, -8.6);
+		glVertex2f(7.3 + map_addition, -8.6);
+		glVertex2f(7.3 + map_addition, -8.9);
+		glVertex2f(7.0 + map_addition, -8.9);
 		glEnd();
 	}
-	if (magazine > 8) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 8) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(7.4, -8.6);
-		glVertex2f(7.7, -8.6);
-		glVertex2f(7.7, -8.9);
-		glVertex2f(7.4, -8.9);
+		glVertex2f(7.4 + map_addition, -8.6);
+		glVertex2f(7.7 + map_addition, -8.6);
+		glVertex2f(7.7 + map_addition, -8.9);
+		glVertex2f(7.4 + map_addition, -8.9);
 		glEnd();
 	}
-	if (magazine > 9) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 9) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(7.8, -8.6);
-		glVertex2f(8.1, -8.6);
-		glVertex2f(8.1, -8.9);
-		glVertex2f(7.8, -8.9);
+		glVertex2f(7.8 + map_addition, -8.6);
+		glVertex2f(8.1 + map_addition, -8.6);
+		glVertex2f(8.1 + map_addition, -8.9);
+		glVertex2f(7.8 + map_addition, -8.9);
 		glEnd();
 	}
-	if (magazine > 10) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 10) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(6.2, -9.0);
-		glVertex2f(6.5, -9.0);
-		glVertex2f(6.5, -9.4);
-		glVertex2f(6.2, -9.4);
+		glVertex2f(6.2 + map_addition, -9.0);
+		glVertex2f(6.5 + map_addition, -9.0);
+		glVertex2f(6.5 + map_addition, -9.4);
+		glVertex2f(6.2 + map_addition, -9.4);
 		glEnd();
 	}
-	if (magazine > 11) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 11) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(6.6, -9.0);
-		glVertex2f(6.9, -9.0);
-		glVertex2f(6.9, -9.4);
-		glVertex2f(6.6, -9.4);
+		glVertex2f(6.6 + map_addition, -9.0);
+		glVertex2f(6.9 + map_addition, -9.0);
+		glVertex2f(6.9 + map_addition, -9.4);
+		glVertex2f(6.6 + map_addition, -9.4);
 		glEnd();
 	}
-	if (magazine > 12) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 12) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(7.0, -9.0);
-		glVertex2f(7.3, -9.0);
-		glVertex2f(7.3, -9.4);
-		glVertex2f(7.0, -9.4);
+		glVertex2f(7.0 + map_addition, -9.0);
+		glVertex2f(7.3 + map_addition, -9.0);
+		glVertex2f(7.3 + map_addition, -9.4);
+		glVertex2f(7.0 + map_addition, -9.4);
 		glEnd();
 	}
-	if (magazine > 13) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 13) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(7.4, -9.0);
-		glVertex2f(7.7, -9.0);
-		glVertex2f(7.7, -9.4);
-		glVertex2f(7.4, -9.4);
+		glVertex2f(7.4 + map_addition, -9.0);
+		glVertex2f(7.7 + map_addition, -9.0);
+		glVertex2f(7.7 + map_addition, -9.4);
+		glVertex2f(7.4 + map_addition, -9.4);
 		glEnd();
 	}
-	if (magazine > 14) {
-		glColor3f(1.0f, 1.0f, 0.5f);
+	if (bullets_remaining > 14) {
+		glColor3f(color[0], color[1], color[2]);
 		glBegin(GL_QUADS);
-		glVertex2f(7.8, -9.0);
-		glVertex2f(8.1, -9.0);
-		glVertex2f(8.1, -9.4);
-		glVertex2f(7.8, -9.4);
+		glVertex2f(7.8 + map_addition, -9.0);
+		glVertex2f(8.1 + map_addition, -9.0);
+		glVertex2f(8.1 + map_addition, -9.4);
+		glVertex2f(7.8 + map_addition, -9.4);
 		glEnd();
 	}
 }
@@ -350,7 +505,6 @@ void draw_elements() {
 	}
 
 	//drawing enemies and their FoVs
-	//wenemy_fov_1.rotate(35, enemy_1.vertexes[0]);
 	for (int i = 0;i < enemies.size();i++) {
 		if (enemies[i].health > 0) {
 			enemies[i].draw();
@@ -365,7 +519,7 @@ void draw_elements() {
 
 	//drawing power_ups
 	for (int i = 0;i < power_ups.size();i++) {
-		hostages[i].draw();
+		power_ups[i].draw();
 	}
 
 	//drawing bullets
@@ -377,49 +531,149 @@ void draw_elements() {
 
 }
 
+
+void go_to_menu() {
+	gluOrtho2D(-100.0, -90.0, -100.0, -90.0);
+	//move player to menu
+	if (!player_in_menu) {
+		player.move_shape_to(-95, -95);
+		player_in_menu = true;
+	}
+	draw_elements();
+	glColor3f(0.0, 1.0, 0.0);
+	glBegin(GL_QUADS);
+	glVertex2f(-99.0, -92.0);
+	glVertex2f(-97.0, -92.0);
+	glVertex2f(-97.0, -91.);
+	glVertex2f(-99.0, -91.);
+	glEnd();
+
+	glColor3f(1.0, 1.0, 0.0);
+	glBegin(GL_QUADS);
+	glVertex2f(-96.5, -92.0);
+	glVertex2f(-94.5, -92.0);
+	glVertex2f(-94.5, -91.0);
+	glVertex2f(-96.5, -91.0);
+	glEnd();
+
+	glColor3f(1.0, 0.0, 0.0);
+	glBegin(GL_QUADS);
+	glVertex2f(-94.0, -92.0);
+	glVertex2f(-92.0, -92.0);
+	glVertex2f(-92.0, -91.0);
+	glVertex2f(-94.0, -91.0);
+	glEnd();
+	glutSwapBuffers();
+
+	if (menu_door_selected != 0) {
+		is_in_menu = false;
+		switch (menu_door_selected)
+		{
+		case 1:
+			map = map1;
+			player.move_shape_to(8.0, -6.0);
+			break;
+		case 2:
+			map = map2;
+			player.move_shape_to(191.0, -8.5);
+			break;
+		case 3:
+			map = map3;
+			player.move_shape_to(309.0, -8.5);
+			break;
+		}
+	}
+	
+}
+
+void detect_player_menu_door_collision() {
+
+	//detecting menu option collision
+	if (player.vertexes[0].pos_x >= menu_door_1[0].pos_x && player.vertexes[0].pos_x <= menu_door_1[1].pos_x) {
+		if (player.vertexes[0].pos_y <= menu_door_1[2].pos_y && player.vertexes[0].pos_y >= menu_door_1[0].pos_y) {
+			//player colliding with door 1
+			menu_door_selected = 1;
+		}
+	}
+
+	if (player.vertexes[0].pos_x >= menu_door_2[0].pos_x && player.vertexes[0].pos_x <= menu_door_2[1].pos_x) {
+		if (player.vertexes[0].pos_y <= menu_door_2[2].pos_y && player.vertexes[0].pos_y >= menu_door_2[0].pos_y) {
+			//player colliding with door 2
+			menu_door_selected = 2;
+		}
+	}
+
+	if (player.vertexes[0].pos_x >= menu_door_3[0].pos_x && player.vertexes[0].pos_x <= menu_door_3[1].pos_x) {
+		if (player.vertexes[0].pos_y <= menu_door_3[2].pos_y && player.vertexes[0].pos_y >= menu_door_3[0].pos_y) {
+			//player colliding with door 3
+			menu_door_selected = 3;
+		}
+	}
+}
+
 void DesenhaCena(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluOrtho2D(-10.0, 10.0, -10.0, 10.0);
-	draw_elements();
-	glutSwapBuffers();
 
-	//testing end game conditions
-
-	//player dead
-	if (player.health <= 0) {
-		MessageBox(NULL, (LPCWSTR)L"GAME OVER\nSua vida foi reduzida para 0", (LPCWSTR)L"GAME OVER", MB_OK);
-		glutLeaveMainLoop();
+	if (is_in_menu) {
+		go_to_menu();
 	}
+	else {
 
-	//player reached hostage
-	for (int i = 0; i < hostages.size(); i++) {
-		if (player.is_colliding_with(hostages[i])) {
-			MessageBox(NULL, (LPCWSTR)L"VOCÊ VENCEU!\nVocê resgatou o(s) refém(ns)", (LPCWSTR)L"GAME OVER", MB_OK);
+		switch (menu_door_selected) 
+		{
+		case 1:
+			gluOrtho2D(-10.0, 10.0, -10.0, 10.0);
+			break;
+		case 2:
+			gluOrtho2D(190.0, 210.0, -10.0, 10.0);
+			break;
+		case 3:
+			gluOrtho2D(290.0, 310.0, -10.0, 10.0);
+			break;
+		}
+		
+		draw_elements();
+		glutSwapBuffers();
+
+
+		//testing end game conditions
+
+		//player dead
+		if (player.health <= 0) {
+			MessageBox(NULL, (LPCWSTR)L"GAME OVER\nSua vida foi reduzida para 0", (LPCWSTR)L"GAME OVER", MB_OK);
 			glutLeaveMainLoop();
 		}
-	}
 
-	//all enemies are dead
-	bool all_enemies_dead = true;
-	for (int i = 0; i < enemies.size(); i++) {
-		if (enemies[i].health > 0) {
-			all_enemies_dead = false;
+		//player reached hostage
+		for (int i = 0; i < hostages.size(); i++) {
+			if (player.is_colliding_with(hostages[i])) {
+				MessageBox(NULL, (LPCWSTR)L"VOCÊ VENCEU!\nVocê resgatou o(s) refém(ns)", (LPCWSTR)L"GAME OVER", MB_OK);
+				glutLeaveMainLoop();
+			}
 		}
-	}
 
-	if (all_enemies_dead) {
-		MessageBox(NULL, (LPCWSTR)L"VOCÊ VENCEU!\nVocê eliminou todos os inimigos", (LPCWSTR)L"GAME OVER", MB_OK);
-		glutLeaveMainLoop();
-	}
+		//all enemies are dead
+		bool all_enemies_dead = true;
+		for (int i = 0; i < enemies.size(); i++) {
+			if (enemies[i].health > 0) {
+				all_enemies_dead = false;
+			}
+		}
 
-	//hostage dead
-	for (int i = 0; i < hostages.size(); i++) {
-		if (hostages[i].health <= 0) {
-			MessageBox(NULL, (LPCWSTR)L"GAME OVER\nUm refém foi morto", (LPCWSTR)L"GAME OVER", MB_OK);
+		if (all_enemies_dead) {
+			MessageBox(NULL, (LPCWSTR)L"VOCÊ VENCEU!\nVocê eliminou todos os inimigos", (LPCWSTR)L"GAME OVER", MB_OK);
 			glutLeaveMainLoop();
+		}
+
+		//hostage dead
+		for (int i = 0; i < hostages.size(); i++) {
+			if (hostages[i].health <= 0) {
+				MessageBox(NULL, (LPCWSTR)L"GAME OVER\nUm refém foi morto", (LPCWSTR)L"GAME OVER", MB_OK);
+				glutLeaveMainLoop();
+			}
 		}
 	}
 
@@ -434,13 +688,13 @@ void Inicio(void)
 
 void check_bullet_collision() {
 
+	using std::swap;
 
 	for (int i = 0;i < bullets.size();i++) {
 		bool bullet_erased = false;
 		//detecting enemy hit
 		for (int j = 0;j < enemies.size();j++) {
 			if (bullets[i].is_colliding_with(enemies[j]) && enemies[j].health>0) {
-				using std::swap;
 				swap(bullets[i], bullets.back());
 				bullets.pop_back();
 				enemies[j].health -= 1;
@@ -457,11 +711,16 @@ void check_bullet_collision() {
 		else {
 			for (int j = 0; j < map.size();j++) {
 				if (bullets[i].is_colliding_with(map[j])) {
-					swap(bullets[i], bullets.back());
-					bullets.pop_back();
+					if (bullets[i].bullet_type == DRILL) {
+						break;
+					}
+					else {
+						swap(bullets[i], bullets.back());
+						bullets.pop_back();
 
-					bullet_erased = true;
-					break;
+						bullet_erased = true;
+						break;
+					}
 				}
 			}
 		}
@@ -563,7 +822,10 @@ void move_bullets() {
 
 void player_movement(int value) {
 
+	using std::swap;
+
 	if (IS_DOWN_KEY_PRESSED) {
+
 		Shape teste = player.simulate_translation(0, PLAYER_MOVEMENT_TIC, 0, 0);
 		//testing wall collision
 		bool no_wall_collision = true;
@@ -591,6 +853,19 @@ void player_movement(int value) {
 				}
 			}
 		}
+
+		//detecting power up collision
+		for (int i = 0; i < power_ups.size(); i++) {
+			if (player.is_colliding_with(power_ups[i])) {
+				swap(power_ups[i], power_ups.back());
+				power_ups.pop_back();
+				define_powerup();
+			}
+		}
+		
+		//detecting menu door collision
+		detect_player_menu_door_collision();
+
 	}
 
 	if (IS_UP_KEY_PRESSED) {
@@ -621,6 +896,18 @@ void player_movement(int value) {
 				}
 			}
 		}
+
+		//detecting power up collision
+		for (int i = 0; i < power_ups.size(); i++) {
+			if (player.is_colliding_with(power_ups[i])) {
+				swap(power_ups[i], power_ups.back());
+				power_ups.pop_back();
+				define_powerup();
+			}
+		}
+
+		//detecting menu door collision
+		detect_player_menu_door_collision();
 	}
 
 	if (IS_LEFT_KEY_PRESSED) {
@@ -651,6 +938,17 @@ void player_movement(int value) {
 				}
 			}
 		}
+		//detecting power up collision
+		for (int i = 0; i < power_ups.size(); i++) {
+			if (player.is_colliding_with(power_ups[i])) {
+				swap(power_ups[i], power_ups.back());
+				power_ups.pop_back();
+				define_powerup();
+			}
+		}
+
+		//detecting menu door collision
+		detect_player_menu_door_collision();
 	}
 
 	if (IS_RIGHT_KEY_PRESSED) {
@@ -681,6 +979,18 @@ void player_movement(int value) {
 				}
 			}
 		}
+
+		//detecting power up collision
+		for (int i = 0; i < power_ups.size(); i++) {
+			if (player.is_colliding_with(power_ups[i])) {
+				swap(power_ups[i], power_ups.back());
+				power_ups.pop_back();
+				define_powerup();
+			}
+		}
+
+		//detecting menu door collision
+		detect_player_menu_door_collision();
 	}
 
 	move_bullets();
@@ -696,9 +1006,21 @@ void player_movement(int value) {
 void mouse_click(int button, int state, int x, int y) {
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN && !is_mouse_clicked) {
 		is_mouse_clicked = true;
-		if (magazine > 0) {
-			bullets.push_back(factory.create_shape(Constants::BULLET, player.vertexes[0], player_angle));
-			magazine--;
+		if (!is_in_menu) {
+			if (current_powerup == NONE) {
+				if (magazine > 0) {
+					bullets.push_back(factory.create_shape(Constants::BULLET, player.vertexes[0], player_angle, current_powerup, true));
+					magazine--;
+				}
+			}
+			else {
+				if (powerup_bullets > 0) {
+					bullets.push_back(factory.create_shape(Constants::BULLET, player.vertexes[0], player_angle, current_powerup, true));
+					powerup_bullets--;
+					if (powerup_bullets == 0)
+						current_powerup = NONE;
+				}
+			}
 		}
 	}
 	else if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) {
@@ -714,8 +1036,8 @@ void mouse_click(int button, int state, int x, int y) {
 // Especifica a função de callback de desenho
 int main(int argc, char **argv)
 {
-
-	FreeConsole();
+	srand(time(0));
+	//FreeConsole();
 	glutInit(&argc, argv);
 	glutInitWindowSize(1000,1000);
 

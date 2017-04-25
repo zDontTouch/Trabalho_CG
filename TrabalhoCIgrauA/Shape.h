@@ -90,6 +90,7 @@ public:
 	float vertical_middle;
 	float horizontal_middle;
 	float angle;
+	int bullet_type;  //if the shape is a bullet, it has a type (normal,drill,etc)
 
 	Shape(int type, std::vector<Vertex> vertexes) {
 		this->type = type;
@@ -323,6 +324,16 @@ public:
 		Shape ret(PLAYER, { this->vertexes[0], this->vertexes[1], this->vertexes[2] });
 		ret.translate(direction_up, direction_down, direction_left, direction_rigth);
 		return ret;
+	}
+
+	void move_shape_to(float posX, float posY) {
+		if (this->type == PLAYER) {
+			this->vertexes[0] = { posX,posY };
+			this->vertexes[1] = { posX + (PLAYER_WIDTH / 2), posY - PLAYER_HEIGHT };
+			this->vertexes[2] = { posX - (PLAYER_WIDTH / 2), posY - PLAYER_HEIGHT };
+			vertical_middle = ((this->vertexes[1].pos_y + this->vertexes[0].pos_y) / 2);
+			horizontal_middle = this->vertexes[0].pos_x;
+		}
 	}
 
 };
