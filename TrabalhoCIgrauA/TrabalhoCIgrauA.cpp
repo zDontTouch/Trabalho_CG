@@ -177,7 +177,7 @@ vector<Shape> map;
 //////////////////////////////////////////
 //           creating enemies           //
 //////////////////////////////////////////
-Shape enemy_1 = factory.create_shape(Constants::ENEMY, Vertex(-9.5, 9.0), 35);
+Shape enemy_1 = factory.create_shape(Constants::ENEMY, Vertex(-8.5, 8.5));
 //Shape enemy_2 = factory.create_shape(Constants::ENEMY, Vertex(-2.0, -4.0));
 
 vector<Shape> enemies{
@@ -201,7 +201,7 @@ vector<Shape> hostages{
 // ps: the enemy FoVs must be created   //
 //   in the same sequence as enemies    //
 //////////////////////////////////////////
-Shape enemy_fov_1 = factory.create_shape(Constants::ENEMY_FOV, enemy_1.vertexes[0],enemy_1.angle);
+Shape enemy_fov_1 = factory.create_shape(Constants::ENEMY_FOV, enemy_1.vertexes[0]);
 
 vector<Shape> enemy_fov{
 	enemy_fov_1
@@ -243,8 +243,8 @@ vector<float> check_hud_color() {
 		return RICOCHET_BULLET_COLOR;
 		break;
 	}
-	case HOAMING: {
-		return HOAMING_BULLET_COLOR;
+	case BLAST: {
+		return BLAST_BULLET_COLOR;
 		break;
 	}
 	}
@@ -252,8 +252,8 @@ vector<float> check_hud_color() {
 
 void define_powerup() {
 	
-	current_powerup = (rand() % 3) + 1;
-
+	//current_powerup = (rand() % 3) + 1;
+	current_powerup = BLAST;
 	switch (current_powerup)
 	{
 	case DRILL:
@@ -262,8 +262,8 @@ void define_powerup() {
 	case RICOCHET:
 		powerup_bullets = 5;
 		break;
-	case HOAMING:
-		powerup_bullets = 2;
+	case BLAST:
+		powerup_bullets = 15;
 		break;
 	}
 }
@@ -695,8 +695,8 @@ void check_bullet_collision() {
 		//detecting enemy hit
 		for (int j = 0;j < enemies.size();j++) {
 			if (bullets[i].is_colliding_with(enemies[j]) && enemies[j].health>0) {
-				swap(bullets[i], bullets.back());
-				bullets.pop_back();
+					swap(bullets[i], bullets.back());
+					bullets.pop_back();
 				enemies[j].health -= 1;
 				
 				bullet_erased = true;
@@ -715,8 +715,8 @@ void check_bullet_collision() {
 						break;
 					}
 					else {
-						swap(bullets[i], bullets.back());
-						bullets.pop_back();
+							swap(bullets[i], bullets.back());
+							bullets.pop_back();
 
 						bullet_erased = true;
 						break;
@@ -732,6 +732,8 @@ void check_bullet_collision() {
 		else {
 			for (int j = 0; j < hostages.size();j++) {
 				if (bullets[i].is_colliding_with(hostages[j])) {
+						swap(bullets[i], bullets.back());
+						bullets.pop_back();
 					hostages[j].health -= 1;
 
 					bullet_erased = true;
@@ -767,9 +769,14 @@ void teclasNormais(unsigned char tecla, int x, int y) {
 		player.rotate(-0.2);
 		player_angle -= 0.2;
 		break;
-	case 'I':
-		cout << enemy_1.vertexes[0].pos_x << "-" << enemy_1.vertexes[0].pos_y << endl;
-		break;
+	case ' ': //case spacebar, explode all explosive bullets
+		for (int i = 0; i < bullets.size(); i++) {
+			if (bullets[i].bullet_type == BLAST) {
+				bullets[i].explode_bullet();
+				glutPostRedisplay();
+				check_bullet_collision();
+			}
+		}
 	}
 
 }
@@ -1029,6 +1036,7 @@ void mouse_click(int button, int state, int x, int y) {
 
 	glutPostRedisplay();
 }
+
 
 // Parte principal - ponto de início de execução
 // Cria janela 

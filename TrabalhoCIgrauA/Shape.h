@@ -244,12 +244,29 @@ public:
 			this->vertexes[i].pos_y += this->reference.pos_y;
 		}
 
+		//drawing blast bullet range
+		if (this->bullet_type == BLAST) {
+			glColor3f(1, 0, 0);
+			glBegin(GL_QUADS);
+			glVertex2f(this->vertexes[0].pos_x - BLAST_BULLET_RADIUS, this->vertexes[0].pos_y + BLAST_BULLET_RADIUS);
+			glVertex2f(this->vertexes[1].pos_x + BLAST_BULLET_RADIUS, this->vertexes[1].pos_y + BLAST_BULLET_RADIUS);
+			glVertex2f(this->vertexes[2].pos_x + BLAST_BULLET_RADIUS, this->vertexes[2].pos_y - BLAST_BULLET_RADIUS);
+			glVertex2f(this->vertexes[3].pos_x - BLAST_BULLET_RADIUS, this->vertexes[3].pos_y - BLAST_BULLET_RADIUS);
+			glEnd();
+			glutSwapBuffers();
+		}
+
+		glutPostRedisplay();
+
 	}
 
 	bool is_colliding_with(Shape s) {
 
 		if (s.type == ENEMY) {
 			s.rotate(s.angle *-1);
+		}
+		if (s.type == ENEMY_FOV) {
+			s.rotate(s.angle * -1, s.reference);
 		}
 
 		for (int i = 0; i < this->vertexes.size(); i++) {
@@ -264,6 +281,9 @@ public:
 
 		if (s.type == ENEMY) {
 			s.rotate(s.angle);
+		}
+		if (s.type == ENEMY_FOV) {
+			s.rotate(s.angle, s.reference);
 		}
 
 		return false;
@@ -334,6 +354,17 @@ public:
 			vertical_middle = ((this->vertexes[1].pos_y + this->vertexes[0].pos_y) / 2);
 			horizontal_middle = this->vertexes[0].pos_x;
 		}
+	}
+
+	void explode_bullet() {
+			this->vertexes[0].pos_x -= BLAST_BULLET_RADIUS;
+			this->vertexes[0].pos_y += BLAST_BULLET_RADIUS;
+			this->vertexes[1].pos_x += BLAST_BULLET_RADIUS;
+			this->vertexes[1].pos_y += BLAST_BULLET_RADIUS;
+			this->vertexes[2].pos_x += BLAST_BULLET_RADIUS;
+			this->vertexes[2].pos_y -= BLAST_BULLET_RADIUS;
+			this->vertexes[3].pos_x -= BLAST_BULLET_RADIUS;
+			this->vertexes[3].pos_y -= BLAST_BULLET_RADIUS;
 	}
 
 };

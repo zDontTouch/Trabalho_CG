@@ -8,9 +8,9 @@ c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigra
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(18): warning C4305: 'initializing': truncation from 'double' to 'float'
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(19): warning C4305: 'initializing': truncation from 'double' to 'float'
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(21): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(25): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(26): warning C4305: 'initializing': truncation from 'double' to 'float'
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(27): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(28): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(29): warning C4305: 'initializing': truncation from 'double' to 'float'
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(102): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(103): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(107): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
@@ -29,11 +29,15 @@ c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigra
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(225): warning C4018: '<': signed/unsigned mismatch
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(234): warning C4018: '<': signed/unsigned mismatch
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(242): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(255): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(260): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(318): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(334): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(335): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(251): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(252): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(253): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(254): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(272): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(277): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(338): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(354): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(355): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(37): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(38): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(40): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
@@ -208,38 +212,38 @@ c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigra
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(516): warning C4018: '<': signed/unsigned mismatch
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(521): warning C4018: '<': signed/unsigned mismatch
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(526): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(654): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(663): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(675): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(651): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(660): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(672): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(693): warning C4018: '<': signed/unsigned mismatch
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(696): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(699): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(715): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(736): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(766): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(770): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(782): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(783): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(819): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(835): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(845): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(861): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(878): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(888): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(904): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(920): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(930): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(945): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(961): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(971): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(987): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(1015): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(1021): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(1042): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(712): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(733): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(765): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(769): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(773): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(786): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(787): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(823): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(839): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(849): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(865): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(882): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(892): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(908): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(924): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(934): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(949): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(965): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(975): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(991): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(1019): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(1025): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(1047): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(251): warning C4715: 'check_hud_color': not all control paths return a value
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(98): warning C4715: 'Shape_factory::create_shape': not all control paths return a value
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(58): warning C4715: 'Shape_factory::create_shape': not all control paths return a value
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(88): warning C4715: 'Shape_factory::create_shape': not all control paths return a value
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(311): warning C4715: 'Shape::check_color': not all control paths return a value
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(331): warning C4715: 'Shape::check_color': not all control paths return a value
 c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(83): warning C4715: 'Shape::is_vertex_inside': not all control paths return a value
   TrabalhoCIgrauA.vcxproj -> C:\Users\Leo\Documents\Visual Studio 2015\Projects\TrabalhoCIgrauA\Debug\TrabalhoCGgrauA.exe
   TrabalhoCIgrauA.vcxproj -> C:\Users\Leo\Documents\Visual Studio 2015\Projects\TrabalhoCIgrauA\Debug\TrabalhoCGgrauA.pdb (Full PDB)
