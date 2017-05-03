@@ -1,249 +1,273 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (TrabalhoCIgrauA.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  stdafx.cpp
   TrabalhoCIgrauA.cpp
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(6): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(7): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(9): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(10): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(12): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(18): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(19): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(21): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(27): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(28): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\constants.h(29): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(102): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(103): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(107): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(108): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(114): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(115): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(128): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(129): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(133): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(134): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(142): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(143): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(169): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(184): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(204): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(225): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(234): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(242): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(251): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(252): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(253): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(254): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(272): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(277): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(338): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(354): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(355): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(37): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(38): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(40): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(47): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(48): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(73): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(79): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(80): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(81): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(82): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(114): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(115): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(116): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(117): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(151): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(152): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(153): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(285): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(286): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(287): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(287): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(288): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(288): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(298): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(298): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(299): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(299): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(300): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(300): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(301): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(301): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(307): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(307): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(308): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(308): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(309): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(309): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(310): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(310): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(315): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(315): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(316): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(316): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(317): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(317): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(318): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(318): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(324): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(324): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(325): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(325): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(326): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(326): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(327): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(327): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(332): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(332): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(333): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(333): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(334): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(334): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(335): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(335): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(340): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(341): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(342): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(342): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(343): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(343): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(363): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(363): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(364): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(364): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(365): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(366): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(372): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(372): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(373): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(373): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(374): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(375): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(381): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(381): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(382): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(382): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(383): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(384): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(391): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(391): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(392): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(392): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(393): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(394): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(400): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(400): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(401): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(401): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(402): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(403): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(409): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(409): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(410): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(410): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(411): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(411): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(412): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(412): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(418): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(418): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(419): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(419): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(420): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(420): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(421): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(421): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(427): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(427): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(428): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(428): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(429): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(429): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(430): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(430): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(436): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(436): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(437): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(437): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(438): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(438): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(439): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(439): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(445): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(445): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(446): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(446): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(447): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(447): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(448): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(448): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(454): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(455): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(456): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(456): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(457): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(457): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(463): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(464): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(465): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(465): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(466): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(466): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(472): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(473): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(474): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(474): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(475): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(475): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(481): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(482): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(483): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(483): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(484): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(484): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(490): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(491): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(492): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(492): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(493): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(493): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(503): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(508): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(516): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(521): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(526): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(651): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(660): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(672): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(693): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(696): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(712): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(733): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(765): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(769): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(773): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(786): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(787): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(823): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(839): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(849): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(865): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(882): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(892): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(908): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(924): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(934): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(949): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(965): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(975): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(991): warning C4018: '<': signed/unsigned mismatch
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(1019): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(1025): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(1047): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\trabalhocigraua.cpp(251): warning C4715: 'check_hud_color': not all control paths return a value
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(98): warning C4715: 'Shape_factory::create_shape': not all control paths return a value
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape_factory.h(58): warning C4715: 'Shape_factory::create_shape': not all control paths return a value
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(331): warning C4715: 'Shape::check_color': not all control paths return a value
-c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua\trabalhocigraua\shape.h(83): warning C4715: 'Shape::is_vertex_inside': not all control paths return a value
-  TrabalhoCIgrauA.vcxproj -> C:\Users\Leo\Documents\Visual Studio 2015\Projects\TrabalhoCIgrauA\Debug\TrabalhoCGgrauA.exe
-  TrabalhoCIgrauA.vcxproj -> C:\Users\Leo\Documents\Visual Studio 2015\Projects\TrabalhoCIgrauA\Debug\TrabalhoCGgrauA.pdb (Full PDB)
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\constants.h(6): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\constants.h(7): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\constants.h(9): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\constants.h(10): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\constants.h(12): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\constants.h(18): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\constants.h(19): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\constants.h(21): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\constants.h(27): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\constants.h(28): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\constants.h(29): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(102): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(103): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(107): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(108): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(114): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(115): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(128): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(129): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(133): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(134): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(142): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(143): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(169): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(184): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(204): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(225): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(234): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(242): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(251): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(252): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(253): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(254): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(272): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(277): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(338): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(354): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(355): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(42): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(43): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(45): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(52): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(53): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(78): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(84): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(85): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(86): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(87): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(119): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(120): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(121): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(122): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(156): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(157): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(158): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(159): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(370): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(431): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(432): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(433): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(433): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(434): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(434): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(444): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(444): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(445): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(445): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(446): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(446): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(447): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(447): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(453): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(453): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(454): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(454): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(455): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(455): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(456): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(456): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(461): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(461): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(462): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(462): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(463): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(463): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(464): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(464): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(470): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(470): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(471): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(471): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(472): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(472): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(473): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(473): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(478): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(478): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(479): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(479): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(480): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(480): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(481): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(481): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(486): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(487): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(488): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(488): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(489): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(489): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(509): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(509): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(510): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(510): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(511): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(512): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(518): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(518): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(519): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(519): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(520): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(521): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(527): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(527): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(528): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(528): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(529): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(530): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(537): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(537): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(538): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(538): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(539): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(540): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(546): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(546): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(547): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(547): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(548): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(549): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(555): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(555): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(556): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(556): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(557): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(557): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(558): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(558): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(564): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(564): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(565): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(565): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(566): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(566): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(567): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(567): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(573): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(573): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(574): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(574): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(575): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(575): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(576): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(576): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(582): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(582): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(583): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(583): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(584): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(584): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(585): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(585): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(591): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(591): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(592): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(592): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(593): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(593): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(594): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(594): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(600): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(601): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(602): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(602): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(603): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(603): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(609): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(610): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(611): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(611): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(612): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(612): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(618): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(619): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(620): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(620): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(621): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(621): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(627): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(628): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(629): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(629): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(630): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(630): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(636): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(637): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(638): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(638): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(639): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(639): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(649): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(654): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(662): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(667): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(672): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(677): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(691): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(692): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(693): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(694): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(698): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(699): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(744): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(754): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(764): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(833): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(842): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(854): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(875): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(878): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(894): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(915): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(927): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(930): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(946): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(967): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(997): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1001): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1005): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1012): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1013): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1022): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1023): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1059): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1064): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1080): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1090): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1106): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1123): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1133): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1149): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1165): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1175): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1190): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1206): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1216): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1232): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1255): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1279): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1303): warning C4018: '<': signed/unsigned mismatch
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1341): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1347): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(1368): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\trabalhocigraua.cpp(397): warning C4715: 'check_hud_color': not all control paths return a value
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape_factory.h(98): warning C4715: 'Shape_factory::create_shape': not all control paths return a value
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape_factory.h(58): warning C4715: 'Shape_factory::create_shape': not all control paths return a value
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape_factory.h(88): warning C4715: 'Shape_factory::create_shape': not all control paths return a value
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(331): warning C4715: 'Shape::check_color': not all control paths return a value
+c:\users\leo\documents\visual studio 2015\projects\trabalhocigraua - entrega\trabalhocigraua\shape.h(83): warning C4715: 'Shape::is_vertex_inside': not all control paths return a value
+  TrabalhoCIgrauA.vcxproj -> C:\Users\Leo\Documents\Visual Studio 2015\Projects\TrabalhoCIgrauA - entrega\Debug\TrabalhoCGgrauA.exe
+  TrabalhoCIgrauA.vcxproj -> C:\Users\Leo\Documents\Visual Studio 2015\Projects\TrabalhoCIgrauA - entrega\Debug\TrabalhoCGgrauA.pdb (Full PDB)

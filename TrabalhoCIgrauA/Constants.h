@@ -46,7 +46,7 @@ namespace Constants {
 	std::vector<float> POWERUP_COLOR = { 255.0f, 246.0f, 0.0f };
 
 	std::vector<float> DRILL_BULLET_COLOR = { 0.6f, 0.6f, 0.6f };
-	std::vector<float> RICOCHET_BULLET_COLOR = { 0.3f, 0.9f, 0.9f };
+	std::vector<float> EXPANSIVE_BULLET_COLOR = { 0.3f, 0.9f, 0.9f };
 	std::vector<float> BLAST_BULLET_COLOR = { 0.2f, 0.8f, 0.2f };
 
 	enum Object_Type
@@ -64,7 +64,7 @@ namespace Constants {
 	{
 		NONE,
 		DRILL,
-		RICOCHET,
+		EXPANSIVE,
 		BLAST
 	};
 	
